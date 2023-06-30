@@ -13,6 +13,8 @@
 * Cors
 * PG
 * Morgan
+* Bcrypt
+* UUID
 
 ### Dev Dependency
 

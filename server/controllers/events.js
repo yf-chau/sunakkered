@@ -21,7 +21,7 @@ async function show(req, res) {
 
 async function showByDate(req, res) {
     try {
-        const {start_date, end_date} = req.body;
+        const { start_date, end_date } = req.body;
         const events = await Event.getEventsByDate(start_date, end_date);
         res.status(200).json(events)
     } catch (error) {
@@ -29,9 +29,9 @@ async function showByDate(req, res) {
     }
 }
 
-async function search (req, res) {
+async function search(req, res) {
     try {
-        const keyword = req.params.keyword;
+        const keyword = req.body.keyword;
         const events = await Event.getEventsByKeyword(keyword)
         res.status(200).json(events)
     } catch (error) {
@@ -39,7 +39,7 @@ async function search (req, res) {
     }
 }
 
-async function create (req, res) {
+async function create(req, res) {
     try {
         const data = req.body;
         const event = await Event.create(data)
@@ -49,7 +49,7 @@ async function create (req, res) {
     }
 }
 
-async function update (req, res) {
+async function update(req, res) {
     try {
         const data = req.body;
         const event = await Event.getOneByEventId(req.params.id)
@@ -60,7 +60,7 @@ async function update (req, res) {
     }
 }
 
-async function destroy (req, res) {
+async function destroy(req, res) {
     try {
         const event = await Event.getOneByEventId(req.params.id)
         const result = await event.destroy()
@@ -70,4 +70,15 @@ async function destroy (req, res) {
     }
 }
 
-module.exports = { index, show, showByDate, search, create, update, destroy }
+async function upcoming(req, res) {
+    try {
+        //show 3 upcoming events
+        const numberOfEvents = 3
+        const events = await Event.getUpcomingEvents(numberOfEvents)
+        res.status(200).json(events);
+    } catch (error) {
+        res.status(404).json({ "error": error.message })
+    }
+}
+
+module.exports = { index, show, showByDate, search, create, update, destroy, upcoming }

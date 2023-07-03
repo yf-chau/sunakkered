@@ -3,7 +3,7 @@ const db = require('../database/connect')
 class Event {
     constructor({
         event_id, event_name, event_start_date, event_start_time, event_end_date, event_end_time,
-        event_description, location, category, organiser_id, approver_id, volunteer_id, partcipant_id
+        event_description, location, category, organiser_id, approver_id, volunteer_id, participant_id
     }) {
         this.event_id = event_id
         this.event_name = event_name
@@ -17,7 +17,7 @@ class Event {
         this.organiser_id = organiser_id
         this.approver_id = approver_id
         this.volunteer_id = volunteer_id
-        this.partcipant_id = partcipant_id
+        this.participant_id = participant_id
     }
 
     static async getAll() {
@@ -38,7 +38,7 @@ class Event {
     }
 
     static async getEventsByKeyword(keyword) {
-        const response = await db.query("SELECT * FROM events WHERE event_name ILIKE $1 OR event_updatedescription ILIKE $1;", [`%${keyword}%`]);
+        const response = await db.query("SELECT * FROM events WHERE event_name ILIKE $1 OR event_description ILIKE $1;", [`%${keyword}%`]);
         if (response.rows.length < 1) {
             throw new Error("No event found.")
         }
@@ -53,9 +53,17 @@ class Event {
         return response.rows.map(e => new Event(e))
     }
 
+    static async getUpcomingEvents(numberOfEvents) {
+        const response = await db.query("SELECT * FROM events ORDER BY event_start_date LIMIT $1", [numberOfEvents])
+        if (response.rows.length === 0) {
+            throw new Error("No event available.")
+        }
+        return response.rows.map(e => new Event(e))
+    }
+
     static async create(data) {
-        const { event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location = NULL, category = NULL, organiser_id = NULL, partcipant_id = NULL } = data;
-        const response = await db.query("INSERT INTO events (event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location, category, organiser_id, partcipant_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *;", [event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location, category, organiser_id, partcipant_id])
+        const { event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location = NULL, category = NULL, organiser_id = NULL, participant_id = NULL } = data;
+        const response = await db.query("INSERT INTO events (event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location, category, organiser_id, participant_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *;", [event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location, category, organiser_id, participant_id])
         const eventID = response.rows[0].event_id;
         const newEvent = await Event.getOneByEventId(eventID)
         return newEvent;
@@ -81,6 +89,7 @@ class Event {
         }
         return new Event(response.rows[0]);
     }
+
 }
 
 

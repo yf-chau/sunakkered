@@ -4,6 +4,7 @@ const logger = require('morgan');
 
 const app = express();
 const userRouter = require('./routers/users');
+const eventRouter = require('./routers/events');
 app.use(cors());
 app.use(express.json());
 app.use(logger('dev'));
@@ -17,4 +18,5 @@ app.get("/", (req, res) => {
 })
 
 app.use("/users", userRouter);
+app.use("/events", eventRouter);
 module.exports = app;

@@ -13,11 +13,11 @@ CREATE TABLE events (
     organiser_id INT,
     -- approver_id INT,
     -- volunteer_id INT,
-    partcipant_id INT,
+    participant_id INT,
     FOREIGN KEY(organiser_id) REFERENCES users(users_id),
     -- FOREIGN KEY(approver_id) REFERENCES admin(admin_id),
     -- FOREIGN KEY(volunteer_id) REFERENCES volunteer(volunteer_id),
-    FOREIGN KEY(partcipant_id) REFERENCES users(users_id),
+    FOREIGN KEY(participant_id) REFERENCES users(users_id),
     PRIMARY KEY (event_id)
 );
 
@@ -34,7 +34,7 @@ INSERT INTO
         organiser_id,
         -- approver_id,
         -- volunteer_id,
-        partcipant_id
+        participant_id
     )
 VALUES
     ('Community Cleanup Day', '2023-07-15', '09:00:00', '2023-07-15', '12:00:00', 'Join us in cleaning up our neighborhood!', 'City Park', 'Community Service', NULL, NULL),

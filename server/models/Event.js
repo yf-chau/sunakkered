@@ -34,11 +34,11 @@ class Event {
         if (response.rows.length != 1) {
             throw new Error("Unable to find event.")
         }
-        return new Country(response.rows[0]);
+        return new Event(response.rows[0]);
     }
 
     static async getEventsByKeyword(keyword) {
-        const response = await db.query("SELECT * FROM events WHERE event_name LIKE '%$1%' OR event_name LIKE '%$2%' OR event_name LIKE '%$3%'", [keyword, keyword, keyword]);
+        const response = await db.query("SELECT * FROM events WHERE event_name ILIKE $1 OR event_updatedescription ILIKE $1;", [`%${keyword}%`]);
         if (response.rows.length < 1) {
             throw new Error("No event found.")
         }
@@ -62,10 +62,12 @@ class Event {
     }
 
     async update(data) {
-        const { event_id, event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location = NULL, category = NULL, organiser_id = NULL, participant_id = NULL } = data;
+
+        const { event_name=this.event_name, event_start_date=this.event_start_date, event_start_time=this.event_start_time, event_end_date=this.event_end_date, event_end_time=this.event_end_time, event_description=this.event_description, location = this.location, category = this.category, organiser_id = this.organiser_id, participant_id = this.participant_id } = data;
+
         const response = await db.query(
-            "UPDATE events SET event_name = $1, event_start_date = $2, event_start_time = $3, event_end_date = $4, event_end_time = $5, event_description = $6, location = $7, category = $8, organiser_id = $9, participant_id = $10 WHERE id = $11 RETURNING *;",
-            [event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location, category, organiser_id, participant_id, event_id]
+            "UPDATE events SET event_name = $1, event_start_date = $2, event_start_time = $3, event_end_date = $4, event_end_time = $5, event_description = $6, location = $7, category = $8, organiser_id = $9, participant_id = $10 WHERE event_id = $11 RETURNING *;",
+            [event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location, category, organiser_id, participant_id, this.event_id]
         );
         const eventID = response.rows[0].event_id;
         const newEvent = await Event.getOneByEventId(eventID)
@@ -73,7 +75,7 @@ class Event {
     }
 
     async destroy() {
-        const response = await db.query('DELETE FROM events WHERE event_id = $1 RETURNING *;', [this.id]);
+        const response = await db.query('DELETE FROM events WHERE event_id = $1 RETURNING *;', [this.event_id]);
         if (response.rows.length != 1) {
             throw new Error("Unable to delete event.")
         }

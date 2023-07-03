@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const db = require("./connect");
 
-const sql = fs.readFileSync('./server/database/setup.sql').toString();
+const sql = fs.readFileSync('./server/database/setupUser.sql').toString();
 
 db.query(sql)
     .then(data => {

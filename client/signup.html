@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./signup.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap" rel="stylesheet">
+    <script src="./assets/signup.js" defer></script>
 </head>
 <body>
     <div class="container-wrapper">
@@ -19,18 +20,18 @@
             </div>
         </div>
 
-        <form class="form" action="">
+        <form id="register-form" class="register-form" action="">
             <div class="container">
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
                 <br>
-                <label for="name">User Name</label>
-                <input class="text-box" type="text" placeholder="Enter Name" name="name" required>
+                <label for="username">User Name</label>
+                <input  id="username" class="text-box" type="text" placeholder="Enter Name" name="username" required>
                 <label for="address">Address</label>
-                <input type="address" placeholder="Enter Address" name="address" required>
+                <input  id="address" type="address" placeholder="Enter Address" name="address" required>
                 <label>
                 <label for="password">Password</label>
-                <input type="password" placeholder="Enter Password" name="password" required>
+                <input  id="password" type="password" placeholder="Enter Password" name="password" required>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>

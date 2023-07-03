@@ -3,11 +3,19 @@ DROP TABLE IF EXISTS user_account;
 
 
 CREATE TABLE user_account (
-    user_id INT GENERATED ALWAYS AS IDENTITY,
-    username VARCHAR(30) UNIQUE NOT NULL,
-    password CHAR(60) NOT NULL,
-    PRIMARY KEY (user_id)
-);
+  users_id INT GENERATED ALWAYS AS IDENTITY,
+  username VARCHAR(50) UNIQUE NOT NULL,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  phone_number INT,
+  email VARCHAR(100),
+  above18 Boolean, 
+  borough VARCHAR(50),
+  password CHAR(10) NOT NULL,
+  PRIMARY KEY (users_id)
+)
+
+
 
 CREATE TABLE token (
     token_id INT GENERATED ALWAYS AS IDENTITY,

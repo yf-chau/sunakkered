@@ -1,0 +1,183 @@
+/* Title */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  width: 100%;
+  margin-top: 450px;
+  background-color: #EFEAD8;
+  border-radius: 10px;
+}
+
+.logo {
+  position: absolute;
+  left: 50px;
+}
+
+.logo img {
+  height: 200px;
+  width: 200px;
+}
+
+.title {
+  display: inline-block;
+}
+
+/* info container */
+.container {
+  max-width: 1000px;
+  padding: 30px;
+  margin: 50px auto;
+  background-color: #EFEAD8;    
+  border-radius: 10px;
+}
+
+/* Outer sign-up box */
+.form {
+  background-color: #94B29B;
+  margin: 50px auto;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.inline-p {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 820px;
+}
+
+.guest {
+  margin-right: 0;
+}
+
+/* Body and background */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #6B7E6D;
+  font-family: 'Ysabeau Office', sans-serif;
+}
+
+
+/* Text box info */
+.text-box {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background-color: #D0C9C0;
+}
+
+input[type=text], input[type=password], input[type=address] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px -15px;
+  display: inline-block;
+  border: none;
+  background-color: #D0C9C0;
+  border-radius: 10px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+button:hover {
+  opacity:1;
+}
+.signupbtn {
+  width: 20%;
+  border-radius: 7px;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.submit {
+  text-align: center;
+}
+
+.inline-p {
+  margin-bottom: 0;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .signupbtn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .inline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+
+/* Adjust top margin for extra-small screens */
+@media screen and (max-width: 480px) {
+  .top {
+    margin-top: 3200px;
+  }
+}
+
+/* Adjust top margin for small screens */
+@media screen and (max-width: 767px) {
+  .top {
+    margin-top: 300px;
+  }
+}
+
+/* Adjust top margin for medium screens */
+@media screen and (max-width: 991px) {
+  .top {
+    margin-top: 500px;
+  }
+}
+
+/* Adjust top margin for medium-sized screens */
+@media screen and (max-width: 1024px) {
+  .top {
+    margin-top: 600px;
+  }
+}
+
+/* Adjust top margin for larger screens */
+@media screen and (max-width: 1200px) {
+  .top {
+    margin-top: 600px;
+  }
+}
+
+/* Adjust top margin for extra-large screens */
+@media screen and (max-width: 1400px) {
+  .top {
+    margin-top: 600px;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .top {
+    margin-top: 600px;
+  }
+}
+  

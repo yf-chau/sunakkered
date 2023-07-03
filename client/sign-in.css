@@ -1,59 +1,4 @@
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px -15px;
-  display: inline-block;
-  border: none;
-  background-color: #D0C9C0;
-
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-
-button:hover {
-  opacity:1;
-}
-
-/* Float signup button*/
-.signupbtn {
-  width: 20%;
-  border-radius: 7px;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .signupbtn {
-    width: 100%;
-  }
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #6B7E6D;
-  font-family: 'Ysabeau Office', sans-serif;
-}
-
-.container {
-  max-width: 1000px;
-  padding: 30px;
-  margin: 50px auto;
-  background-color: #EFEAD8;    
-}
-
-.form {
-  background-color: #94B29B;
-  margin: 50px auto;
-  padding: 40px;
-}
-
+/* Title */
 .top {
   display: flex;
   align-items: center;
@@ -62,8 +7,9 @@ body {
   position: relative;
   height: 200px;
   width: 100%;
-  margin-top: 125px;
+  margin-top: 340px;
   background-color: #EFEAD8;
+  border-radius: 10px;
 }
 
 .logo {
@@ -80,6 +26,45 @@ body {
   display: inline-block;
 }
 
+/* Info container */
+.container {
+  max-width: 1000px;
+  padding: 30px;
+  margin: 50px auto;
+  background-color: #EFEAD8;    
+  border-radius: 10px;
+}
+
+/* Outer sign in box */
+.form {
+  background-color: #94B29B;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.inline-p {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 820px;
+  margin-bottom: 0;
+}
+
+.guest {
+  margin-right: 0;
+}
+
+/* Body and background */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #6B7E6D;
+  font-family: 'Ysabeau Office', sans-serif;
+}
+
+/* Input info boxes */
 .text-box {
   width: 100%;
   padding: 15px;
@@ -89,41 +74,82 @@ body {
   background-color: #D0C9C0;
 }
 
-button {
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px -15px;
+  display: inline-block;
+  border: none;
+  background-color: #D0C9C0;
+  border-radius: 10px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.signupbtn:hover {
+  opacity:1;
+}
+
+.signupbtn {
+  width: 20%;
+  border-radius: 7px;
   background-color: #04AA6D;
-  color: white;
+  color: #fff;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
   opacity: 0.9;
 }
-
 
 .submit {
   text-align: center;
 }
 
-.inline-p {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 820px;
-}
-
-.guest {
-  margin-right: 0;
-}
-
-@media screen and (max-width: 600px) {
-  .inline-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
+/* Adjust top margin for extra-small screens */
+@media screen and (max-width: 480px) {
+  .top {
+    margin-top: 200px;
+  }
+  .form {
+    padding: 100px;
   }
 }
 
-.inline-p {
-  margin-bottom: 0;
+/* Adjust top margin for small screens */
+@media screen and (max-width: 767px) {
+  .top {
+    margin-top: 200px;
+  }
 }
+
+/* Adjust top margin for medium screens */
+@media screen and (max-width: 991px) {
+  .top {
+    margin-top: 200px;
+  }
+}
+
+/* Adjust top margin for medium-sized screens */
+@media screen and (max-width: 1024px) {
+  .top {
+    margin-top: 250px;
+  }
+}
+
+/* Adjust top margin for larger screens */
+@media screen and (max-width: 1200px) {
+  .top {
+    margin-top: 200px;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .top {
+    margin-top: 200px;
+  }
+}
+  

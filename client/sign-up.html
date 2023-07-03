@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Florin Sign-up</title>
     <link rel="stylesheet" href="./sign-up.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap" rel="stylesheet">
-    <script src="./assets/signup.js" defer></script>
 </head>
 <body>
     <div class="container-wrapper">
@@ -19,21 +18,27 @@
                 <h1>Florin County Council Community Sign up</h1>
             </div>
         </div>
-
-        <form id="register-form" class="register-form" action="">
+        <form class="form">
             <div class="container">
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
                 <br>
-                <label for="username">User Name</label>
-                <input  id="username" class="text-box" type="text" placeholder="Enter Name" name="username" required>
-                <label for="address">Address</label>
-                <input  id="address" type="address" placeholder="Enter Address" name="address" required>
-                <label>
+                <label for="name">First Name</label>
+                <input class="text-box" type="text" placeholder="Enter First Name" name="name" required>
+                <label for="name">Last Name</label>
+                <input class="text-box" type="text" placeholder="Enter Last Name" name="name" required>
+                <label for="name">User Name</label>
+                <input class="text-box" type="text" placeholder="Enter Name" name="name" required>
+                <label for="name">Email</label>
+                <input class="text-box" type="text" placeholder="Enter Email" name="email" required>
                 <label for="password">Password</label>
-                <input  id="password" type="password" placeholder="Enter Password" name="password" required>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                <label for="number">Phone Number</label>
+                <input type="text" placeholder="Enter Phone Number" name="number" required>
+                <label for="address">Address</label>
+                <input type="address" placeholder="Enter Address" name="address" required>
                 <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                    <input type="checkbox" name="remember" required> I confirm that I am over the age of 18
                 </label>
                 <div class="submit">
                     <button type="submit" class="signupbtn">Sign Up</button>

@@ -2,32 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/favicon.ico">
-    <link rel="stylesheet" href="./assets/default.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./signup.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap" rel="stylesheet">
     <script src="./assets/signup.js" defer></script>
-    <title>Discretion</title>
 </head>
 <body>
-    <header>
-        <h1>Discretion</h1>
-        <em>Not everything needs to be public.</em>
-    </header>
-    <hr />
-    <main>
-        <form id="register-form">
-            <fieldset>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
-            </fieldset>
-            <fieldset>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
-            </fieldset>
-            <input type="submit" value="Register">
+    <div class="container-wrapper">
+        <!-- <img class="logo" src="./images/Logo-new.png" alt="logo"> -->
+        <div class="top">
+            <div class="logo">
+                <img src="./images/Logo-new.png" alt="logo">
+            </div>
+            <div class="title">
+                <h1>Florin County Council Community Sign up</h1>
+            </div>
+        </div>
+
+        <form id="register-form" class="register-form" action="">
+            <div class="container">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <br>
+                <label for="username">User Name</label>
+                <input  id="username" class="text-box" type="text" placeholder="Enter Name" name="username" required>
+                <label for="address">Address</label>
+                <input  id="address" type="address" placeholder="Enter Address" name="address" required>
+                <label>
+                <label for="password">Password</label>
+                <input  id="password" type="password" placeholder="Enter Password" name="password" required>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <div class="submit">
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+            </div>
+            <p class="inline-p">Already a member? <a href="./login.html">Sign in</a></p>
+            <p class="inline-p guest">Continue as a <a href="./home.html"> Guest</a></p>
         </form>
-        <p>Already registered? <a href="./login.html">Log in here</a>.</p>
-    </main>
+    </div>
 </body>
 </html>

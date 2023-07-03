@@ -1,13 +1,13 @@
 DROP TABLE IF EXISTS events;
 
 CREATE TABLE events (
-    id INT GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(100) NOT NULL,
-    start_date DATE,
-    start_time TIME,
-    end_date DATE,
-    end_time TIME,
-    description VARCHAR(1000),
+    event_id INT GENERATED ALWAYS AS IDENTITY,
+    event_name VARCHAR(100) NOT NULL,
+    event_start_date DATE,
+    event_start_time TIME,
+    event_end_date DATE,
+    event_end_time TIME,
+    event_description VARCHAR(1000),
     location VARCHAR(100),
     category VARCHAR(100),
     organiser_id INT,
@@ -15,20 +15,20 @@ CREATE TABLE events (
     volunteer_id INT,
     partcipant_id INT,
     FOREIGN KEY(organiser_id) REFERENCES user(user_id),
-    FOREIGN KEY(approver_id) REFERENCES admin(admin_id),
-    FOREIGN KEY(volunteer_id) REFERENCES volunteer(volunteer_id),
+    -- FOREIGN KEY(approver_id) REFERENCES admin(admin_id),
+    -- FOREIGN KEY(volunteer_id) REFERENCES volunteer(volunteer_id),
     FOREIGN KEY(partcipant_id) REFERENCES user(user_id),
     PRIMARY KEY (id)
 );
 
 INSERT INTO
     events (
-        name,
-        start_date,
-        start_time,
-        end_date,
-        end_time,
-        description,
+        event_name,
+        event_start_date,
+        event_start_time,
+        event_end_date,
+        event_end_time,
+        event_description,
         location,
         category,
         organiser_id,

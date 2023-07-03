@@ -8,6 +8,7 @@ body {
     background-color: #6B7E6D;
     margin:0;
     padding:0;
+    font-family: 'Ysabeau Office', sans-serif;
 }
 
 .topBar {
@@ -36,9 +37,69 @@ body {
     right: 50px;
 }
 
+.userIcon p {
+    font-size: 25px;
+}
+
 .userIcon img {
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: #94B29B;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 50px;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+
+.row .card img {
+    height: 300px;
+    width: 200px;
+}
+
+.container {
+    margin-top: -30px;
+    height: 170px;
+}
+
+.container h4 {
+    padding: 0px 16px;
+    font-size: 35px;
+    color: white;
+}
+
+.container p {
+    margin-top: -30px;
+    padding: 2px 16px;
+    font-size: 20px;
+    color: white;
+}
+
+.cardBtn {
+    padding: 2px 16px;
+    font-size: 20px;
+    font-family: 'Ysabeau Office', sans-serif;
+    background: none;
+    border: none;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.card:hover { 
+    top: -10px;
+}
+
+.newsBoard {
+    margin: 50px 10px;
 }
 
 .nav-bar {
@@ -47,48 +108,234 @@ body {
     margin: 0 40px;
     margin-top: 50px;
     background-color: #94B29B;
-}
-
-.nav-bar a {
-    float: left;
-    text-align: center;
-    padding: 20px 30px;
-    font-size: 25px;
-    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 35px;
     color: white;
-    text-decoration: none;
-}
-
-.nav-centered a {
-    float: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.nav-right {
-    float: right;
+    text-align: center;
 }
 
 .news-box {
-    height: 500px;
     background-color: #EFEAD8;
     margin: 0 40px;
+    padding: 100px 0px;
     border: 30px solid #D0C9C0;
+    position: relative; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &::before {  
+        content: "";
+        background: url('images/Logo-new.png') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.1;
+    }
 }
 
-@media screen and (max-width: 800px) {
-    .nav-bar a, .nav-right {
-      float: none;
-      display: block;
+.lists {
+    position: relative;
+    margin: 0 100px;
+}
+
+.lists h2 {
+    padding: 0px 16px;
+    font-size: 60px;
+    color: #94B29B;
+}
+
+.lists ul li {
+    font-size: 30px;
+    list-style: none;
+    margin-top: 20px ;
+}
+
+.lists .sub-list li {
+    font-size: 20px;
+    margin: 0px;
+    list-style: circle;
+}
+
+@media screen and (max-width: 1514px) {
+    .card {
+        margin: 30px;
+    }
+
+    .newsBoard {
+        margin: 0 -10px;
+    }
+}
+
+@media screen and (max-width: 1460px) {
+    .lists {
+        margin: 0 50px;
+    }
+
+    .lists h2 {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 1334px) {
+    .card p {
+        font-size: 18px;
+    }
+
+    .lists h2 {
+        font-size: 40px;
+    }
+
+    .lists ul li {
+        font-size: 25px;
     }
     
-    .nav-centered a {
-      position: relative;
-      top: 0;
-      left: 0;
-      transform: none;
+    .lists .sub-list li {
+        font-size: 18px;
+    } 
+}
+
+@media screen and (max-width: 1250px) {
+    .row .card img {
+        height: 200px;
+        width: 150px;
+    }
+
+    .container h4 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .card {
+        margin: 50px 100px;
+    }
+
+    .container h4 {
+        font-size: 35px;
+    }
+
+    .card p {
+        font-size: 25px;
+    }
+
+    .cardBtn {
+        font-size: 25px;
+    }
+
+    .row .card img {
+        height: 400px;
+    }
+
+    .newsBoard {
+        margin: 0 60px;
+        margin-bottom: 50px;
+    }
+
+    .nav-bar {
+        font-size: 30px;
+    }
+
+    .news-box {
+        flex-direction: column;
+        padding: 0px;
+        border: 10px solid #D0C9C0;
+        align-items: center;
+
+        &::before {  
+            content: "";
+            background: none;
+        }
+    }
+
+    .lists {
+        margin-bottom: 30px;
+    }
+
+    .lists .sub-list li {
+        margin-left: -40px;
+        list-style: none;
+    }
+
+    .sub-list {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .card {
+        margin: 50px 50px;
+    }
+
+    .row .card img {
+        height: 300px;
+    }
+
+    .newsBoard {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container h4 {
+        font-size: 30px;
+    }
+    
+    .card p {
+        font-size: 18px;
+    }
+
+    .cardBtn {
+        font-size: 18px;
+    }
+
+    .lists {
+        width: 100%;
+    }
+
+    .lists h2 {
+        font-size: 30px;
+    }
+
+    .lists ul li {
+        font-size: 18px;
+    }
+    
+    .lists .sub-list li {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .userIcon img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .card {
+        margin: 20px 10px;
+    }
+
+    .row .card img {
+        height: 200px;
+    }
+
+    .newsBoard {
+        margin-top: 30px;
+    }
+
+    .nav-bar {
+        margin: 0 0px;
+    }
+
+    .news-box {
+        margin: 0 0px;
     }
 }
 

@@ -121,8 +121,6 @@ button {
   .signupbtn {
     width: 100%;
   }
-}
-
 @media screen and (max-width: 600px) {
   .inline-container {
     display: flex;
@@ -131,7 +129,6 @@ button {
     text-align: left;
   }
 }
-
 
 /* Adjust top margin for extra-small screens */
 @media screen and (max-width: 480px) {
@@ -180,4 +177,4 @@ button {
     margin-top: 600px;
   }
 }
-  
+

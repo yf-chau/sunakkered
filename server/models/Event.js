@@ -7,9 +7,9 @@ class Event {
     }) {
         this.event_id = event_id
         this.event_name = event_name
-        this.event_start_date = event_start_date
+        this.event_start_date = event_start_date.toISOString().split('T')[0];
         this.event_start_time = event_start_time
-        this.event_end_date = event_end_date
+        this.event_end_date = event_end_date.toISOString().split('T')[0];
         this.event_end_time = event_end_time
         this.event_description = event_description
         this.location = location
@@ -26,7 +26,6 @@ class Event {
             throw new Error("No event available.")
         }
         return response.rows.map(e => new Event(e))
-
     }
 
     static async getOneByEventId(id) {
@@ -71,7 +70,7 @@ class Event {
 
     async update(data) {
 
-        const { event_name=this.event_name, event_start_date=this.event_start_date, event_start_time=this.event_start_time, event_end_date=this.event_end_date, event_end_time=this.event_end_time, event_description=this.event_description, location = this.location, category = this.category, organiser_id = this.organiser_id, participant_id = this.participant_id } = data;
+        const { event_name = this.event_name, event_start_date = this.event_start_date, event_start_time = this.event_start_time, event_end_date = this.event_end_date, event_end_time = this.event_end_time, event_description = this.event_description, location = this.location, category = this.category, organiser_id = this.organiser_id, participant_id = this.participant_id } = data;
 
         const response = await db.query(
             "UPDATE events SET event_name = $1, event_start_date = $2, event_start_time = $3, event_end_date = $4, event_end_time = $5, event_description = $6, location = $7, category = $8, organiser_id = $9, participant_id = $10 WHERE event_id = $11 RETURNING *;",

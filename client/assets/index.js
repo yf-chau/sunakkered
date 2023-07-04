@@ -2,7 +2,7 @@ window.onload = loadUpcomingEvents;
 
 async function loadUpcomingEvents() {
     try {
-        const response = await fetch("http://florincountycouncil.onrender.com/events/upcoming");
+        const response = await fetch("https://florincountycouncil.onrender.com/events/upcoming");
         const data = await response.json()
 
         const eventList = document.querySelector("#upcoming-events")

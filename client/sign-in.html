@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florin Sign-in</title>
+    <link rel="stylesheet" href="./sign-in.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap" rel="stylesheet">
+    <script src="./assets/login.js" defer></script>
+</head>
+<body>
+    <div class="container-wrapper">
+        <div class="top">
+            <div class="logo">
+                <img src="./images/Logo-new.png" alt="logo">
+            </div>
+            <div class="title">
+                <h1>Florin County Council Community Sign in</h1>
+            </div>
+      </div>
+        <form id = "login-form"class="login-form" action="">
+            <div class="container">
+                <h1>Sign in</h1>
+                <p>Please fill in this form to sign in.</p>
+                <br>
+                <label for="email">User Name</label>
+                <input id="username" class="text-box" type="text" placeholder="Enter Name" name="username" required>
+                <label for="password">Password</label>
+                <input id="password"    type="password" placeholder="Enter Password" name="password" required>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <div class="submit">
+                    <button type="submit" class="signupbtn">Log in</button>
+                </div>
+            </div>
+            <p class="inline-p">Not a member? <a href="./sign-up.html">Sign up</a></p>
+            <p class="inline-p guest">Continue as a <a href="./home.html"> Guest</a></p>
+        </form>
+    </div>
+</body>
+</html>

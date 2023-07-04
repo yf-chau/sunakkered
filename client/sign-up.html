@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florin Sign-up</title>
+    <link rel="stylesheet" href="./sign-up.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap" rel="stylesheet">
+    <script src="./assets/signup.js" defer></script>
+</head>
+<body>
+    <div class="container-wrapper">
+        <!-- <img class="logo" src="./images/Logo-new.png" alt="logo"> -->
+        <div class="top">
+            <div class="logo">
+                <img src="./images/Logo-new.png" alt="logo">
+            </div>
+            <div class="title">
+                <h1>Florin County Council Community Sign up</h1>
+            </div>
+        </div>
+        <form id="register-form" class="form">
+            <div class="container">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <br>
+                <label for="username">User Name</label>
+                <input class="text-box" type="text" placeholder="Enter Name" name="username" required>
+                <label for="password">Password</label>
+                <input id ="password" type="password" placeholder="Enter Password" name="password" required>
+                <label name="first_name" for="first_name">First Name</label>
+                <input id="first_name"  class="text-box" type="text" placeholder="Enter First Name" name="first_name" required>
+                <label for="last_name">Last Name</label>
+                <input id ="lastname" class="text-box" type="text" placeholder="Enter Last Name" name="last_name" required>                
+                <label for="email">Email</label>
+                <input id ="email" class="text-box" type="text" placeholder="Enter Email" name="email" required>
+                
+                <label for="number">Phone Number</label>
+                <input id ="phone-number" type="text" placeholder="Enter Phone Number" name="phone-number" required>
+                <label for="address">Address</label>
+                <input id ="address" type="address" placeholder="Enter Address" name="address" required>
+                <label>
+                <input id="above18" type="checkbox" name="above18" required> I confirm that I am over the age of 18
+                </label>
+                <div class="submit">
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+            </div>
+            <p class="inline-p">Already a member? <a href="./sign-in.html">Sign in</a></p>
+            <p class="inline-p guest">Continue as a <a href="./home.html"> Guest</a></p>
+        </form>
+    </div>
+</body>
+</html>

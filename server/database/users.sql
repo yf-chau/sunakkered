@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS complain_vote;
+DROP TABLE IF EXISTS complaints;
 DROP TABLE IF EXISTS events;
 DROP TABLE IF EXISTS participate;
 DROP TABLE  IF EXISTS users;

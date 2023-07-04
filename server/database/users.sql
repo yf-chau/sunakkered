@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS events;
 DROP TABLE IF EXISTS participate;
 DROP TABLE  IF EXISTS users;
+DROP TABLE IF EXISTS token;
 
 CREATE TABLE users (
   users_id INT GENERATED ALWAYS AS IDENTITY,
@@ -15,6 +16,15 @@ CREATE TABLE users (
   image_url VARCHAR(100),
   PRIMARY KEY (users_id)
 );
+
+CREATE TABLE token (
+    token_id INT GENERATED ALWAYS AS IDENTITY,
+    users_id INT NOT NULL,
+    token CHAR(100) UNIQUE NOT NULL,
+    PRIMARY KEY (token_id),
+    FOREIGN KEY (users_id) REFERENCES users("users_id")
+);
+
 
 
 INSERT INTO users (username, first_name, last_name, phone_number, email, above18, borough, password, image_url)

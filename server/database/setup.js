@@ -2,7 +2,11 @@ require("dotenv").config();
 const fs = require('fs');
 const db = require('./connect');
 
+const sql_admin = fs.readFileSync("./server/database/admin.sql").toString();
 
+db.query(sql_admin)
+    .then(data => console.log("Admin table Set up complete"))
+    .catch(error => console.log(error))
 
 const sql_users = fs.readFileSync("./server/database/users.sql").toString();
 

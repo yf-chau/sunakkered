@@ -1,53 +1,52 @@
-const User = require('../models/User')
-
+const Participate = require('../models/Participate')
 
 async function index(req, res) {
     try {
-        const users = await User.getAll();
-        res.status(200).json(users);
+        const participants = await Participate.getAll();
+        res.status(200).json(participants);
     } catch(error) {
         res.status(500).json({"error": error.message})
     }
-};
+}
 
-async function show (req,res) {
+async function show(req,res){
     try{
-        const id = parseInt(req.params.id)
-        const user = await User.getOneByUserId(id);
-        res.status(200).json(user);
+        const id = parseInt(req.params.id);
+        const participant = await Participate.getOneByParticipantId(id);
+        res.status(200).json(participant)
     } catch (error) {
         res.status(404).json({"error": error.message})
-    }
-};
+    } 
+}
 
 async function create (req, res) {
     try {
         const data = req.body;
-        const newUser = await User.create(data);
-        res.status(201).json(newUser);
+        const newParticipant = await Participate.create(data);
+        res.status(201).json(newParticipant);
     } catch(error) {
         res.status(400).json({"error": error.message});
     }
-};
+}
 
 async function update (req, res) {
     try {
         const data = req.body;
         const Id = req.params.id
-        const user = await User.getOneByUserId(Id);
-        const result = await user.update(data);
+        const participant = await Participate.getOneByParticipantId(Id);
+        const result = await participant.update(data);
         res.status(200).json(result);
     } catch (error) {
         res.status(404).json({"error": error.message})
     }
-};
+}
 
 async function destroy (req, res) {
     try {
         const Id = req.params.id
-        const user = await User.getOneByUserId(Id);
-        const result = await user.destroy();
-        res.status(204).json(result);
+        const participant = await Participate.getOneByParticipantId(Id);
+        const result = await participant.destroy()
+        res.status(204).json(result)
     } catch (error) {
         res.status(404).json({"error": error.message})
     }

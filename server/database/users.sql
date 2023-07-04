@@ -1,26 +1,22 @@
 DROP TABLE IF EXISTS events;
 DROP TABLE IF EXISTS participate;
-<<<<<<< HEAD
 DROP TABLE  IF EXISTS users;
-=======
-DROP TABLE IF EXISTS users;
->>>>>>> 7fc84475073933d0e6055df66dcbbc5323045ce3
 
 CREATE TABLE users (
   users_id INT GENERATED ALWAYS AS IDENTITY,
-  username VARCHAR(50) NOT NULL,
+  username VARCHAR(50) UNIQUE NOT NULL,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   phone_number VARCHAR(20),
   email VARCHAR(100),
   above18 Boolean, 
   borough VARCHAR(50),
-  password CHAR(10),
+  password VARCHAR(100),
   image_url VARCHAR(100),
   PRIMARY KEY (users_id)
 );
 
-<<<<<<< HEAD
+
 INSERT INTO users (username, first_name, last_name, phone_number, email, above18, borough, password, image_url)
 VALUES
   ('john_doe', 'John', 'Doe', '1234567890', 'john.doe@example.com', true, 'Bigfoot', 'password1', 'https://example.com/johndoe.jpg'),
@@ -33,7 +29,3 @@ VALUES
   ('sophia_wilson', 'Sophia', 'Wilson', '7890123456', 'sophia.wilson@example.com', true, 'Bumpass', 'password8', 'https://example.com/sophiawilson.jpg'),
   ('david_taylor', 'David', 'Taylor', '3690246813', 'david.taylor@example.com', true, 'Crapstone', 'password9', 'https://example.com/davidtaylor.jpg'),
   ('emma_anderson', 'Emma', 'Anderson', '2468135790', 'emma.anderson@example.com', true, 'Beaverlick', 'password10', 'https://example.com/emmaanderson.jpg');
-=======
--- INSERT INTO users (username, first_name, last_name, phone_number, email, above18, borough, password, image_url)
--- VALUES("ad","222","daw",3242432,"eesfwda",True,"wadawd","adfwda","wfafaw")
->>>>>>> 7fc84475073933d0e6055df66dcbbc5323045ce3

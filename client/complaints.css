@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap');
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    background-color: #6B7E6D;
+    margin:0;
+    padding:0;
+    font-family: 'Ysabeau Office', sans-serif;
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    width: 100%;
+    margin-top: 40px;
+    background-color: #EFEAD8;
+}
+
+.title {
+    display: inline-block;
+    font-size: 30px;
+}
+
+.logo {
+    position: absolute;
+    margin-right: 700px;
+}
+  
+.logo img {
+    height: 200px;
+    width: 200px;
+}
+
+.row {
+    margin: 50px 0;
+    padding-bottom: 100px;
+}
+
+.row .columns {
+    margin-bottom: 100px;
+}
+
+.columns {
+    display: flex;
+    gap: 7em;
+    flex-wrap: wrap;
+    height: 600px;
+    margin: 0 100px;
+}
+
+.form {
+    background-color: #94B29B;
+    flex: 1 1 60%;
+}
+
+.list {
+    background-color: #94B29B;
+    flex: 1 1 30%;
+}
+
+.form h2 {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.complaint-form {
+    background-color: #94B29B;
+    padding: 20px;
+}
+
+.container {
+    padding: 30px;
+    background-color: #EFEAD8;  
+    height: 700px;  
+}
+
+.container label {
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 30px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px -15px;
+    display: inline-block;
+    border: none;
+    background-color: #D0C9C0;
+    border-radius: 10px;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 20px;
+}
+
+input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px -15px;
+    display: inline-block;
+    border: none;
+    background-color: #D0C9C0;
+    border-radius: 10px;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 20px;
+    resize: none;
+}
+
+.form textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.submit-btn:hover {
+    opacity:1;
+  }
+  
+.submit-btn {
+    width: 20%;
+    border-radius: 7px;
+    background-color: #94B29B;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 20px;
+}
+  
+.submit {
+    text-align: center;
+}
+
+.list h2 {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.complaints {
+    background-color: #94B29B;
+    padding: 20px;
+}
+
+.container ul {
+    height: 600px; 
+    overflow: hidden; 
+    overflow-y: scroll;
+    list-style: none;
+    padding: 0 50px;
+}
+
+.container li {
+    border-bottom: 1px solid black;
+    padding: 30px 10px;
+    font-size: 20px;
+}
+
+.container li:hover {
+    background-color: #ddd;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 10%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+    background-color: #EFEAD8;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    border-radius: 7px;
+    max-width: 400px;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    width: 80%;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.popup img {
+    width: 100px;
+    margin-top: -70px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup p {
+    font-size: 20px;
+}
+
+.popup button {
+    width: 60%;
+    margin-top: 30px;
+    padding: 10px 0;
+    background: #94B29B;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.popup-content-complaint {
+    background-color: #EFEAD8;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    max-width: 400px;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    width: 80%;
+}
+
+.popup-content-complaint h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 10px 0 10px;
+}
+
+.popup-content-complaint .heading {
+    text-decoration: underline;
+}
+
+

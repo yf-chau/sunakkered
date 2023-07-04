@@ -1,0 +1,123 @@
+/* Title */
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    width: 65%;
+    margin-top: 40px;
+    background-color: #EFEAD8;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.logo img {
+    height: 200px;
+    width: 200px;
+}
+
+.userIcon {
+    position: absolute;
+    right: 50px;
+}
+
+.userIcon p {
+    font-size: 25px;
+}
+
+.userIcon img {
+    height: 50px;
+    width: 50px;
+}
+
+/* Body and background */
+body {
+    background-color: #6B7E6D;
+    margin:0;
+    padding:0;
+    font-family: 'Ysabeau Office', sans-serif;
+}
+
+/* Welcome statement */
+.welcome {
+    font-family: 'Ysabeau Office', sans-serif;
+    background-color: #94B29B;
+    padding: 15px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -5px;
+    width: 94%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+#calendar {
+    max-width: 70%;
+    padding: 40px;
+    background-color: #94B29B;
+    color: #000;
+    margin-left: 40px;
+    margin-top: 30px;
+    border-radius: 10px;
+    font-family: 'Ysabeau Office', sans-serif;
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+  
+
+input[type=date], input[type=time], input[type=text], select[name="borough"] {
+    width: 100%;
+    padding: 20px;
+    margin: 5px 0px 20px 0;
+    display: inline-block;
+    border: none;
+    background-color: #D0C9C0;
+    border-radius: 10px;
+    color: grey;
+    box-sizing: border-box;
+  }
+
+
+  #form {
+    background-color: #94B29B;
+    padding: 20px 60px 30px 30px;
+    border-radius: 10px;
+    margin: 30px 40px auto 20px;
+    max-width: 35%;
+    font-family: 'Ysabeau Office', sans-serif;
+  }
+
+  #form h2 {
+    margin-top: 0;
+  }
+
+#form button {
+    width: 40%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 30%;
+  }
+
+.container {
+    display: flex;
+  }
+
+

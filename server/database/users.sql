@@ -11,7 +11,7 @@ CREATE TABLE users (
   email VARCHAR(100),
   above18 Boolean, 
   borough VARCHAR(50),
-  password VARCHAR(100),
+  password VARCHAR(100) NOT NULL,
   image_url VARCHAR(100),
   PRIMARY KEY (users_id)
 );

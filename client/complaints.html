@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints Page</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Volunteer</li>
+            <li>Events</li>
+        </ul>
+    </nav>
+
+    <form id="complaints-form" class="complaints-form">
+        <div class="container">
+            <h3>Please fill in this form to file a complaint</h3>
+            <br>
+                <label for="complaint_title">Title</label>
+                <input class="complaint_title" type="text" placeholder="Enter title complaint" name="complaint_title" required>
+                <br>
+                <label for="description">Description</label>
+                <input class="description" type="text" placeholder="description" name="description" required>
+                <br>
+                <label for="category">Category</label>
+                <input class="category" type="text" placeholder="category" name="description" required>
+                <br>
+                <label for="borough">Borough</label>
+                <input id ="borough" type="text" placeholder="Enter Borough" name="borough" required>
+                <label>
+                    <br>
+                    <input id="isFixed" type="checkbox" name="isFixed"> Has the issue been fixed?
+                    </label>
+                    <br>
+                <div class="submit">
+                    <button type="submit" class="signupbtn">Submit</button>
+                </div>
+        </div>
+
+    </form>
+</body>
+</html>

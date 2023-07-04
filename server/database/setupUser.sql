@@ -11,7 +11,7 @@ CREATE TABLE user_account (
   email VARCHAR(100),
   above18 BOOLEAN, 
   borough VARCHAR(30),
-  password VARCHAR(35) NOT NULL,
+  password VARCHAR(100) NOT NULL,
   PRIMARY KEY (user_id)
 );
 

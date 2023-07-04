@@ -11,7 +11,13 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         },
         body: JSON.stringify({
             username: form.get("username"),
-            password: form.get("password")
+            password: form.get("password"),
+            first_name: form.get("first_name"),
+            last_name: form.get("last_name"),
+            phone_number: form.get("phone-number"),
+            email: form.get("email"),
+            above18: form.get("above18") === "on", 
+            borough: form.get("borough")            
         })
     }
 
@@ -19,7 +25,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     const data = await response.json();
 
     if (response.status == 201) {
-        window.location.assign("login.html");
+        window.location.assign("sign-in.html");
     } else {
         alert(data.error);
     }

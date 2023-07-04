@@ -2,12 +2,17 @@ const db = require('../database/connect');
 
 class User {
 
-    constructor({ user_id, username, password, is_admin }) {
+    constructor({ user_id, username, password, first_name, last_name, phone_number, email, above18, borough }) {
         this.id = user_id;
         this.username = username;
         this.password = password;
-        this.isAdmin = is_admin;
-    }
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.phone_number = phone_number;
+        this.email = email;
+        this.above18 = above18;
+        this.borough = borough;
+        }
 
     static async getOneById(id) {
         const response = await db.query("SELECT * FROM user_account WHERE user_id = $1", [id]);
@@ -26,9 +31,9 @@ class User {
     }
 
     static async create(data) {
-        const { username, password, isAdmin } = data;
-        let response = await db.query("INSERT INTO user_account (username, password) VALUES ($1, $2) RETURNING user_id;",
-            [username, password]);
+        const { username, password, first_name, last_name, phone_number, email, above18, borough } = data;
+        let response = await db.query("INSERT INTO user_account (username, password, first_name, last_name, phone_number, email, above18, borough) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING user_id;",
+            [username, password, first_name, last_name, phone_number, email, above18, borough]);
         const newId = response.rows[0].user_id;
         const newUser = await User.getOneById(newId);
         return newUser;

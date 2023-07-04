@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Complaints</title>
+    <link rel="stylesheet" href="./complaints.css"></link>
+</head>
+<body>
+    <section class="topBar">
+        <div class="title">
+            <h1>Community Complaints</h1>
+        </div>
+        <div class="logo">
+            <img src="images/Logo-new.png" alt="Logo">
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="columns">
+            <div class="form">
+                <h2>Submit a complaint</h2>
+                <form class="complaint-form">
+                    <div class="container">
+                        <label for="text">What is the complaint?</label>
+                        <input class="text-box" type="text" placeholder="Enter complaint title" name="title" required/>
+                        <label for="text">Description:</label>
+                        <textarea name="description" placeholder="Enter a detailed description of the issue" rows="4" cols="50"></textarea>
+                        <label for="text">Location:</label>
+                        <input class="text-box" type="text" placeholder="Enter location of issue " name="location"/>
+                        <label for="text">Category:</label>
+                        <select id="cars">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="Road">Road</option>
+                            <option value="Housing">Housing</option>
+                            <option value="School">School</option>
+                            <option value="Parking">Parking</option>
+                            <option value="Pollution">Pollution</option>
+                            <option value="Crime">Crime</option>
+                            <option value="Water">Water</option>
+                            <option value="Sewage">Sewage</option>
+                            <option value="Health">Health</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="submit">
+                            <button type="submit" class="submit-btn" id="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="list">
+                <h2>Current complaints</h2>
+                <div class="complaints">
+                <div class="container">
+                    <ul>
+                        <li id="item">Dog poo in the park!</li>
+                        <li>Rubbish everywhere on Longsdale Lane</li>
+                        <li>Pothole on Main Street</li>
+                        <li>Graffiti on Town Hall</li>
+                        <li>Shattered Glass near new Estate</li>
+                        <li>Uncollected bins on Fl Avenue</li> 
+                        <li>Drainage problem on Main Street</li>
+                        <li>Illegal parking on Main Street</li>
+                        <li>No water in community center</li> 
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <img src="images/tick.png" alt="Tick">
+            <h2>Thank you!</h2>
+            <p>Your complaint has been submitted.</p>
+            <p>We will look into this in further detail and get back to you soon.</p>
+            <button type="button" id="close">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="complaint">
+        <div class="popup-content-complaint">
+            <h2>Dog poo in the park!</h2>
+            <p>Category: Other</p>
+            <p class="heading">Description:</p>
+            <p>Someone has left dog poo near the front gate of Florin park</p>
+            <p class="heading">Location:</p>
+            <p>Florin park</p>
+            <button type="button" id="closeComplaint">Close</button>
+        </div>
+    </div>
+
+    <script>
+        let modal = document.getElementById("popup");
+
+        let complaintModal = document.getElementById("complaint");
+
+        let btn = document.getElementById("submit");
+
+        let closeBtn = document.getElementById("close");
+
+        let closeComplaint = document.getElementById("closeComplaint");
+
+        let item = document.getElementById("item");
+
+        btn.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = "block";
+        }
+
+        closeBtn.onclick = function() {
+            location.reload();
+        }
+
+        item.onclick = function() {
+            complaintModal.style.display = "block";
+        }
+
+        closeComplaint.onclick = function() {
+            location.reload();
+        }
+    </script>
+
+    
+</body>
+</html>

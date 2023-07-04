@@ -11,7 +11,16 @@ CREATE TABLE complaints (
     isfixed Boolean,
     image_url VARCHAR(200),
     FOREIGN KEY(complainant_id) REFERENCES users(users_id),
-    PRIMARY KEY (id)
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE complaint_votes (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    complaint_id INT NOT NULL,
+    user_id INT NOT NULL,
+    FOREIGN KEY(complaint_id) REFERENCES complaints(id),
+    FOREIGN KEY(user_id) REFERENCES users(users_id),
+    PRIMARY KEY(id)
 );
 
 INSERT INTO

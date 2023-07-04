@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florin Events</title>
+    <link rel="stylesheet" href="./events.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap" rel="stylesheet">
+</head>
+    <section class="topBar">
+        
+        <div class="logo">
+           <a href="home.html"><img src="images/Logo-new.png" alt="Logo"></a>
+        </div>
+    </section>
+    <section class="heading">
+        <div class="welcome">
+            <p>Welcome to the events page! Here you can find community events around you that you can join to get involved and meet the community!</p>
+        </div>
+        
+    </section>
+    <body>
+        <!-- <div id="weather-widget">
+          <h2>Weather Widget</h2>
+          <div id="weather-info">
+            <p>Loading...</p>
+          </div>
+        </div>
+      
+    <script>
+        const apiKey = 'b5b7d03d3252bf8c5675d4382b30cf52c31f2908312bc043466ebabb42625914';
+        const city = 'London'; // Replace with the desired city name
+    
+        // Fetch weather data from GetAmbee API
+        fetch(`https://api.getambee.com/v1/weather/forecast?api_key=${apiKey}&city=${city}`)
+          .then(response => response.json())
+          .then(data => {
+            const weatherWidget = document.getElementById('weather-info');
+    
+            // Update weather information in the widget
+            weatherWidget.innerHTML = `
+              <h3>${data.data.city}</h3>
+              <p>Temperature: ${data.data.current.temperature} °C</p>
+              <p>Weather: ${data.data.current.weather}</p>
+            `;
+          })
+          .catch(error => {
+            console.log('An error occurred while fetching weather data:', error);
+            const weatherWidget = document.getElementById('weather-info');
+            weatherWidget.innerHTML = '<p>Failed to fetch weather data.</p>';
+          });
+      </script>
+  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="calendar"></div>
+
+    <div id="form">
+      <h2>Event Form</h2>
+      <form>
+        <label for="eventTitle">Event Title</label>
+        <input type="text" placeholder="Enter Event Title" id="eventTitle" name="eventTitle" required>
+        <label for="eventDesc">Event Description</label>
+        <input type="text" placeholder="Enter Event Description" id="eventLocation" name="eventLocation" required>
+
+                <label for="address">Location</label>
+                <select class="text-box" type="select" name="borough" id="borough" required> 
+                    <option value="none" disabled selected> Select a Borough</option>
+                    <option value="crestview">Crestview</option>
+                    <option value="oakwood">Oakwood</option>
+                    <option value="hillside">Hillside</option>
+                    <option value="maplewood">Maplewood</option>
+                    <option value="westlake">Westlake</option>
+                    <option value="fairview">Fairview</option> 
+                    <option value="northwood">Northwood</option>
+                    <option value="other">Other</option>
+                </select>
+
+        <label for="eventDate">Event Date</label>
+        <input type="date" id="eventDate" name="eventDate" required>
+        <label for="eventTime">Event Time</label>
+        <input type="time" id="eventTime" name="eventTime" required>
+        <button type="submit">Create Event</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#calendar').fullCalendar({
+        events: 'https://fullcalendar.io/demo-events.json',
+      });
+    });
+  </script>
+</body>
+</html>

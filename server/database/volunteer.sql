@@ -15,7 +15,7 @@ CREATE TABLE volunteer (
     PRIMARY KEY (volunteer_id)
 );
 
-INSERT INTO volunteer (candrive, description, DBS, interests, skills, users_id)
+INSERT INTO volunteer (candrive, description, DBS, interests, skills, _id)
 VALUES 
     (TRUE, 'Passionate about community service', TRUE, 'Cooking, Gardening', 'Communication, Leadership', 1),
     (FALSE, 'Enthusiastic about animal welfare', FALSE, 'Hiking, Photography', 'Animal handling, First aid', 2),

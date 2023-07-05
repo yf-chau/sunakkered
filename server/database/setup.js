@@ -3,6 +3,7 @@ const fs = require('fs');
 const db = require('./connect');
 
 
+
 const sql_participate = fs.readFileSync("./server/database/participate.sql").toString();
 
 db.query(sql_participate)

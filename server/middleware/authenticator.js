@@ -1,42 +1,20 @@
-const { v4: uuidv4 } = require("uuid");
+const Token = require("../models/token");
 
-const db = require("../database/connect");
+async function authenticator(req, res, next) {
+    try {
+        const userToken = req.headers["authorization"];
 
-class Token {
-
-    constructor({ token_id, user_id, token }){
-        this.token_id = token_id;
-        this.user_id = user_id;
-        this.token = token;
-    }
-
-    static async create(user_id) {
-        const token = uuidv4();
-        const response = await db.query("INSERT INTO token (user_id, token) VALUES ($1, $2) RETURNING token_id;",
-            [user_id, token]);
-        const newId = response.rows[0].token_id;
-        const newToken = await Token.getOneById(newId);
-        return newToken;
-    }
-
-    static async getOneById(id) {
-        const response = await db.query("SELECT * FROM token WHERE token_id = $1", [id]);
-        if (response.rows.length != 1) {
-            throw new Error("Unable to locate token.");
+        if (userToken == "null") {
+            throw new Error("User not authenticated.");
         } else {
-            return new Token(response.rows[0]);
-        }
-    }
+            const validToken = await Token.getOneByToken(userToken);
 
-    static async getOneByToken(token) {
-        const response = await db.query("SELECT * FROM token WHERE token = $1", [token]);
-        if (response.rows.length != 1) {
-            throw new Error("Unable to locate token.");
-        } else {
-            return new Token(response.rows[0]);
+            next();
         }
-    }
 
+    } catch (err) {
+        res.status(403).json({ error: err.message });
+    }
 }
 
-module.exports = Token;
+module.exports = authenticator

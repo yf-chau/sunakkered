@@ -5,108 +5,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Florin Events</title>
-    <link rel="stylesheet" href="./events.css"></link>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap" rel="stylesheet">
-    <script  src="./assets/events.js" defer></script>
+    <link rel="stylesheet" href="./events.css">
 </head>
-<section class="topBar">
-
-  <div class="logo">
-    <a href="home.html"><img src="images/Logo-new.png" alt="Logo"></a>
-  </div>
-</section>
-<section class="heading">
-  <div class="welcome">
-    <p>Welcome to the events page! Here you can find community events around you that you can join to get involved and
-      meet the community!</p>
-  </div>
-
-</section>
 
 <body>
-  <!-- <div id="weather-widget">
-          <h2>Weather Widget</h2>
-          <div id="weather-info">
-            <p>Loading...</p>
-          </div>
+    <div id="ww_924d679fbf9d0" v='1.3' loc='id'
+        a='{"t":"ticker","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"rgba(239,234,216,1)","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_nme":3}'>Weather
+        Data Source: <a href="https://wetterlang.de/london_wetter_21_tage/" id="ww_924d679fbf9d0_u" target="_blank">Wetter
+            21 tage London</a></div>
+    <script async src="https://app1.weatherwidget.org/js/?id=ww_924d679fbf9d0"></script>
+    <section class="topBar">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="home.html"><img src="images/Logo-new.png" alt="Logo" class="logo-img"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="volunteer.html">Volunteer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="complaints.css">Complaints</a>
+                </li>
+            </ul>
         </div>
-      
-    <script>
-        const apiKey = 'b5b7d03d3252bf8c5675d4382b30cf52c31f2908312bc043466ebabb42625914';
-        const city = 'London'; // Replace with the desired city name
-    
-        // Fetch weather data from GetAmbee API
-        fetch(`https://api.getambee.com/v1/weather/forecast?api_key=${apiKey}&city=${city}`)
-          .then(response => response.json())
-          .then(data => {
-            const weatherWidget = document.getElementById('weather-info');
-    
-            // Update weather information in the widget
-            weatherWidget.innerHTML = `
-              <h3>${data.data.city}</h3>
-              <p>Temperature: ${data.data.current.temperature} °C</p>
-              <p>Weather: ${data.data.current.weather}</p>
-            `;
-          })
-          .catch(error => {
-            console.log('An error occurred while fetching weather data:', error);
-            const weatherWidget = document.getElementById('weather-info');
-            weatherWidget.innerHTML = '<p>Failed to fetch weather data.</p>';
-          });
-      </script>
-  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div id="calendar"></div>
-   
-      <div id="form">
-        <h2>Event Form</h2>
-        <form>
-          <label for="eventTitle">Event Title</label>
-          <input type="text" placeholder="Enter Event Title" id="eventTitle" name="eventTitle" required>
-          <label for="eventDesc">Event Description</label>
-          <input type="text" placeholder="Enter Event Description" id="eventDescription" name="eventDescription" required>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sign-in.html">Sign-in</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </section>
+    <section class="heading">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
 
-          <label for="address">Location</label>
-          <select class="text-box" type="select" name="borough" id="borough" required>
-            <option value="none" disabled selected> Select a Borough</option>
-            <option value="crestview">Crestview</option>
-            <option value="oakwood">Oakwood</option>
-            <option value="hillside">Hillside</option>
-            <option value="maplewood">Maplewood</option>
-            <option value="westlake">Westlake</option>
-            <option value="fairview">Fairview</option>
-            <option value="northwood">Northwood</option>
-            <option value="other">Other</option>
-          </select>
+                    <div id="welcome">
+                        <p>Welcome to the events page. <br> Here you can find community events around you that you can
+                            join to get involved and meet the community!</p>
+                    </div>
+                </div>
+    </section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-7 order-lg-1">
+                <div id="calendar"></div>
+            </div>
+            <div class="col-12 col-lg-5 order-lg-2">
+                <div id="form">
+                    <div class="inner-form">
+                        <h2>Event Form</h2>
+                        <form>
+                            <label for="eventTitle">Event Title</label>
+                            <input type="text" placeholder="Enter Title" id="eventTitle" name="eventTitle" required>
+                            <label for="eventDesc">Event Description</label>
+                            <input type="text" placeholder="Enter Description" id="eventLocation"
+                                name="eventLocation" required>
+                            <label for="address">Location</label>
+                            <select class="text-box" type="select" name="borough" id="borough" required>
+                                <option value="none" disabled selected>Select a Borough</option>
+                                <option value="crestview">Crestview</option>
+                                <option value="oakwood">Oakwood</option>
+                                <option value="hillside">Hillside</option>
+                                <option value="maplewood">Maplewood</option>
+                                <option value="westlake">Westlake</option>
+                                <option value="fairview">Fairview</option>
+                                <option value="northwood">Northwood</option>
+                                <option value="other">Other - Please specify in the description</option>
+                            </select>
 
-          <label for="eventDate">Event Date</label>
-          <input type="date" id="eventDate" name="eventDate" required>
-          <label for="eventTime">Event Time</label>
-          <input type="time" id="eventTime" name="eventTime" required>
-          <button type="submit">Create Event</button>
-        </form>
-      </div>
+                            <label for="eventDate">Event Date</label>
+                            <input type="date" id="eventDate" name="eventDate" required>
+                            <label for="eventTime">Event Start Time</label>
+                            <input type="time" id="eventTime" name="eventTime" required>
+                            <label for="eventUntil">Event Finish Time</label>
+                            <input type="time" id="eventUntil" name="eventUntil" required>
+                            <label>
+                                <input id="needVolunteer" type="checkbox" name="needVolunteer" required>
+                                Volunteers required for this event <br><br> Number of volunteers if required
+                            </label>
+                            <label>
+                                <input class="number" type="number" placeholder="Volunteers required">
+                            </label>
+                            <button type="submit">Create Event</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
       $(document).ready(async function () {
-
         const response = await fetch("https://florincountycouncil.onrender.com/events/fullcalendar");
         const data = await response.json()
-
         $('#calendar').fullCalendar({
           events: data,
         });
       });
-
   </script>
 </body>
-    </script>
-  </body>
+
 </html>

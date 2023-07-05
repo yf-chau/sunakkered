@@ -24,22 +24,30 @@
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
                 <br>
-                <label for="username">User Name</label>
-                <input id="username" class="text-box" type="text" placeholder="Enter Name" name="username" required>
-                <label for="password">Password</label>
-                <input id ="password" type="password" placeholder="Enter Password" name="password" required>
                 <label name="first_name" for="first_name">First Name</label>
                 <input id="first_name"  class="text-box" type="text" placeholder="Enter First Name" name="first_name" required>
                 <label for="last_name">Last Name</label>
                 <input id ="lastname" class="text-box" type="text" placeholder="Enter Last Name" name="last_name" required>                
+                <label for="username">Username</label>
+                <input class="text-box" type="text" placeholder="Enter Name" name="username" required>
+                <label for="password">Password</label>
+                <input id ="password" type="password" placeholder="Enter Password" name="password" required>
                 <label for="email">Email</label>
                 <input id ="email" class="text-box" type="text" placeholder="Enter Email" name="email" required>
-                
                 <label for="number">Phone Number</label>
                 <input id ="phone-number" type="text" placeholder="Enter Phone Number" name="phone-number" required>
-                <label for="address">Address</label>
-                <input id ="address" type="address" placeholder="Enter Address" name="address" required>
-                <label>
+                <label for="borough">Location</label>
+                <select class="text-box" type="select" name="borough" id="borough" required> 
+                    <option value="none" disabled selected> Select a Borough</option>
+                    <option value="crestview">Crestview</option>
+                    <option value="oakwood">Oakwood</option>
+                    <option value="hillside">Hillside</option>
+                    <option value="maplewood">Maplewood</option>
+                    <option value="westlake">Westlake</option>
+                    <option value="fairview">Fairview</option> 
+                    <option value="northwood">Northwood</option>
+                    <option value="other">Other</option>
+                </select>
                 <input id="above18" type="checkbox" name="above18" required> I confirm that I am over the age of 18
                 </label>
                 <div class="submit">

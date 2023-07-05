@@ -1,4 +1,5 @@
 const Event = require("../models/Event")
+const Admin = require('../models/Admin');
 
 async function index(req, res) {
     try {
@@ -42,6 +43,7 @@ async function search(req, res) {
 async function create(req, res) {
     try {
         const data = req.body;
+        eventData.status = 'pending'
         const event = await Event.create(data)
         res.status(201).json(event)
     } catch (error) {
@@ -81,4 +83,24 @@ async function upcoming(req, res) {
     }
 }
 
-module.exports = { index, show, showByDate, search, create, update, destroy, upcoming }
+async function approveEvent(req, res) {
+    try {
+        const eventId = req.params.id;
+        const adminId = req.user.id; // Assuming you have the admin ID available in the request
+      
+          // Check if the user is an admin
+        const admin = await Admin.getOneByAdminId(adminId);
+          if (!admin) {
+            throw new Error('Admin not found.');
+          }
+      
+          // Update the post status to 'approved'
+        const updatedEvent = await Event.updateStatus(eventId, 'approved');
+      
+          res.status(200).json(updatedEvent);
+        } catch (err) {
+          res.status(400).json({ error: err.message });
+        }
+      }
+
+module.exports = { index, show, showByDate, search, create, update, destroy, upcoming, approveEvent }

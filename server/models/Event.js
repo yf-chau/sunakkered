@@ -18,6 +18,7 @@ class Event {
         this.approver_id = approver_id
         this.volunteer_id = volunteer_id
         this.participant_id = participant_id
+        this.approval = this.approval
     }
 
     static async getAll() {

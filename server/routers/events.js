@@ -1,7 +1,7 @@
 const { Router } = require('express');
 
 const eventController = require('../controllers/events.js');
-
+const authenticator = require("../middleware/authenticator");
 const eventRouter = Router();
 
 //show all events
@@ -27,5 +27,7 @@ eventRouter.patch("/:id", eventController.update)
 
 //delete an event by id
 eventRouter.delete("/:id", eventController.destroy)
+
+eventRouter.get("/:id/approve", eventController.approveEvent)
 
 module.exports = eventRouter;

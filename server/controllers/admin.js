@@ -4,23 +4,31 @@ const Admin = require('../models/Admin');
 const Token = require('../models/token');
 
 
-async function register (req, res) {
+async function register(req, res) {
     try {
-        const data = req.body;
-
-        // Generate a salt with a specific cost
-        const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUNDS));
-
-        // Hash the password
-        data["password"] = await bcrypt.hash(data["password"], salt);
-
-        const result = await Admin.create(data);
-
-        res.status(201).send(result);
+      const data = req.body;
+  
+      const { adminKey, ...adminData } = data;
+      // Extract the adminKey from the request body
+  
+      // Check if the adminKey is valid
+      if (adminKey !== process.env.ADMIN_KEY) {
+        throw new Error("Invalid admin key.");
+      }
+  
+      // Generate a salt with a specific cost
+      const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUNDS));
+  
+      // Hash the password
+      adminData.password = await bcrypt.hash(adminData.password, salt);
+  
+      const result = await Admin.create(adminData);
+  
+      res.status(201).send(result);
     } catch (err) {
-        res.status(400).json({"error": err.message})
+      res.status(400).json({ error: err.message });
     }
-};
+  }
 
 async function login (req, res) {
     const data = req.body;
@@ -53,7 +61,7 @@ async function index(req, res) {
 async function show (req,res) {
     try{
         const id = parseInt(req.params.id)
-        const admin = await Admin.getOneByUserId(id);
+        const admin = await Admin.getOneByAdminId(id);
         res.status(200).json(admin);
     } catch (error) {
         res.status(404).json({"error": error.message})
@@ -74,7 +82,7 @@ async function update (req, res) {
     try {
         const data = req.body;
         const Id = req.params.id
-        const admin = await Admin.getOneByUserId(Id);
+        const admin = await Admin.getOneByAdminId(Id);
         const result = await admin.update(data);
         res.status(200).json(result);
     } catch (error) {
@@ -85,7 +93,7 @@ async function update (req, res) {
 async function destroy (req, res) {
     try {
         const Id = req.params.id
-        const admin = await Admin.getOneByUserId(Id);
+        const admin = await Admin.getOneByAdminId(Id);
         const result = await admin.destroy();
         res.status(204).json(result);
     } catch (error) {

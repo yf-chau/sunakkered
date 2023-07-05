@@ -9,6 +9,8 @@ userRouter.get("/", userController.index);
 
 userRouter.get("/:id", userController.show);
 
+userRouter.get("/getid", userController.getId)
+
 userRouter.post("/", userController.create);
 
 userRouter.patch("/:id", userController.update);

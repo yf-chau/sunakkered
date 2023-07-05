@@ -12,7 +12,7 @@ CREATE TABLE events (
     category VARCHAR(100),
     organiser_id INT,
     participant_id INT,
-    approval BOOLEAN,
+    approval BOOLEAN DEFAULT TRUE,
     -- approver_id INT,
     -- volunteer_id INT,
     FOREIGN KEY(organiser_id) REFERENCES users(users_id),
@@ -89,7 +89,7 @@ VALUES
         'Family',
         NULL,
         NULL,
-        FALSE
+        TRUE
     ),
     (
         'Art Exhibition',
@@ -180,7 +180,7 @@ VALUES
         'Technology',
         NULL,
         NULL,
-        FALSE
+        TRUE
     ),
     (
         'Pets Adoption Day',
@@ -193,7 +193,7 @@ VALUES
         'Community Service',
         NULL,
         NULL,
-        FALSE
+        TRUE
     ),
     (
         'Outdoor Film Screening',
@@ -206,7 +206,7 @@ VALUES
         'Entertainment',
         NULL,
         NULL,
-        FALSE
+        TRUE
     ),
     (
         'Art Workshop',
@@ -219,7 +219,7 @@ VALUES
         'Arts & Culture',
         NULL,
         NULL,
-        FALSE
+        TRUE
     ),
     (
         'Fitness Bootcamp',
@@ -232,7 +232,7 @@ VALUES
         'Health & Wellness',
         NULL,
         NULL,
-        FALSE
+        TRUE
     ),
     (
         'Local Farmers Market',
@@ -245,7 +245,7 @@ VALUES
         'Food & Agriculture',
         NULL,
         NULL,
-        FALSE
+        TRUE
     ),
     (
         'Music Workshop',
@@ -258,7 +258,7 @@ VALUES
         'Arts & Culture',
         NULL,
         NULL,
-        FALSE
+        TRUE
     ),
     (
         'Charity Run',
@@ -271,7 +271,7 @@ VALUES
         'Community Service',
         NULL,
         NULL,
-        FALSE
+        TRUE
     ),
     (
         'Science Fair',
@@ -284,7 +284,7 @@ VALUES
         'Education',
         NULL,
         NULL,
-        FALSE
+        TRUE
     ),
     (
         'Gardening Workshop',
@@ -297,5 +297,5 @@ VALUES
         'Hobbies & Recreation',
         NULL,
         NULL,
-        FALSE
+        TRUE
     );

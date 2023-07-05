@@ -8,10 +8,6 @@ db.query(sql_admin)
     .then(data => console.log("Admin table Set up complete"))
     .catch(error => console.log(error))
 
-db.query(sql_admin)
-    .then(data => console.log("Admin table Set up complete"))
-    .catch(error => console.log(error))
-
 const sql_participate = fs.readFileSync("./server/database/participate.sql").toString();
 
 db.query(sql_participate)

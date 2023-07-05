@@ -8,9 +8,6 @@
 </head>
 <body>
     <section class="topBar">
-        <div class="title">
-            <h1>Community Complaints</h1>
-        </div>
         <div class="logo">
             <img src="images/Logo-new.png" alt="Logo">
         </div>
@@ -21,14 +18,14 @@
             <div class="form">
                 <h2>Submit a complaint</h2>
                 <form class="complaint-form">
-                    <div class="container">
-                        <label for="text">What is the complaint?</label>
+                    <div class="container-form">
+                        <label>What is the complaint?</label>
                         <input class="text-box" type="text" placeholder="Enter complaint title" name="title" required/>
-                        <label for="text">Description:</label>
+                        <label>Description:</label>
                         <textarea name="description" placeholder="Enter a detailed description of the issue" rows="4" cols="50"></textarea>
-                        <label for="text">Location:</label>
+                        <label>Location:</label>
                         <input class="text-box" type="text" placeholder="Enter location of issue " name="location"/>
-                        <label for="text">Category:</label>
+                        <label>Category:</label>
                         <select id="cars">
                             <option value="" disabled selected>Select your option</option>
                             <option value="Road">Road</option>
@@ -51,17 +48,89 @@
             <div class="list">
                 <h2>Current complaints</h2>
                 <div class="complaints">
-                <div class="container">
+                <div class="container-list">
                     <ul>
-                        <li id="item">Dog poo in the park!</li>
-                        <li>Rubbish everywhere on Longsdale Lane</li>
-                        <li>Pothole on Main Street</li>
-                        <li>Graffiti on Town Hall</li>
-                        <li>Shattered Glass near new Estate</li>
-                        <li>Uncollected bins on Fl Avenue</li> 
-                        <li>Drainage problem on Main Street</li>
-                        <li>Illegal parking on Main Street</li>
-                        <li>No water in community center</li> 
+                        <div class="complaint-item">
+                            <li id="item">Dog poo in the park!</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Rubbish everywhere on Longsdale Lane</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Pothole on Main Street</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Graffiti on Town Hall</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Shattered glass outside New Estate</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Uncollected bins on FL Avenue</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Drainage problem on Main Street</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Illegal parking on Main Street</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Burst pipe in community center</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
                     </ul>
                 </div>
                 </div>
@@ -87,6 +156,9 @@
             <p>Someone has left dog poo near the front gate of Florin park</p>
             <p class="heading">Location:</p>
             <p>Florin park</p>
+            <p class="checkbox">Upvote
+                <input type="checkbox" checked="checked">
+            </p>
             <button type="button" id="closeComplaint">Close</button>
         </div>
     </div>
@@ -121,7 +193,5 @@
             location.reload();
         }
     </script>
-
-    
 </body>
 </html>

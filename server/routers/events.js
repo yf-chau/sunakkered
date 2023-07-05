@@ -7,6 +7,9 @@ const eventRouter = Router();
 //show all events
 eventRouter.get("/", eventController.index);
 
+//show all events for fullCalendar plugin
+eventRouter.get("/fullcalendar", eventController.fullcalendar);
+
 //show upcoming three events
 eventRouter.get("/upcoming", eventController.upcoming);
 

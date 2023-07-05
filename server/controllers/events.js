@@ -1,9 +1,41 @@
 const Event = require("../models/Event")
 
+class FullCalendarEvent {
+    constructor({
+        id, title, start, end, startTime, endTime }) {
+        this.id = id
+        this.title = title
+        this.start = start
+        this.startTime = startTime
+        this.end = end
+        this.endTime = endTime
+    }
+}
+
+function mapEventsToFullCalendar(events) {
+    return events.map(event => {
+        const id = event.event_id;
+        const title = event.event_name;
+        const start = `${event.event_start_date}T${event.event_start_time}`;
+        const end = `${event.event_end_date}T${event.event_end_time}`;
+        return new FullCalendarEvent({ id, title, start, end});
+    });
+}
+
 async function index(req, res) {
     try {
         const events = await Event.getAll();
         res.status(200).json(events)
+    } catch (error) {
+        res.status(500).json({ "error": error.message })
+    }
+}
+
+async function fullcalendar(req, res) {
+    try {
+        const events = await Event.getAll();
+        const fullCalendarEvents = mapEventsToFullCalendar(events);
+        res.status(200).json(fullCalendarEvents)
     } catch (error) {
         res.status(500).json({ "error": error.message })
     }
@@ -81,4 +113,4 @@ async function upcoming(req, res) {
     }
 }
 
-module.exports = { index, show, showByDate, search, create, update, destroy, upcoming }
+module.exports = { index, show, showByDate, search, create, update, destroy, upcoming, fullcalendar }

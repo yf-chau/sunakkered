@@ -29,4 +29,8 @@ db.query(sql_events)
     .then(data => console.log("events table Set up complete"))
     .catch(error => console.log(error))
 
+const sql_complaints = fs.readFileSync("./server/database/complaints.sql").toString();
 
+db.query(sql_complaints)
+    .then(data => console.log("complaints table Set up complete"))
+    .catch(error => console.log(error))

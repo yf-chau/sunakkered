@@ -15,22 +15,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    position: relative;
     height: 200px;
     width: 100%;
     margin-top: 40px;
     background-color: #EFEAD8;
 }
 
-.title {
-    display: inline-block;
-    font-size: 30px;
-}
-
 .logo {
     position: absolute;
-    margin-right: 700px;
 }
   
 .logo img {
@@ -74,16 +66,16 @@ body {
 
 .complaint-form {
     background-color: #94B29B;
-    padding: 20px;
+    padding: 10px 20px 20px 20px;
 }
 
-.container {
+.container-form {
     padding: 30px;
     background-color: #EFEAD8;  
     height: 700px;  
 }
 
-.container label {
+.container-form label {
     font-family: 'Ysabeau Office', sans-serif;
     font-size: 30px;
 }
@@ -91,7 +83,7 @@ body {
 input[type=text], select {
     width: 100%;
     padding: 15px;
-    margin: 5px 0 22px -15px;
+    margin: 5px 0 22px 0px;
     display: inline-block;
     border: none;
     background-color: #D0C9C0;
@@ -108,7 +100,7 @@ input[type=text]:focus {
 .form textarea {
     width: 100%;
     padding: 15px;
-    margin: 5px 0 22px -15px;
+    margin: 5px 0 22px 0px;
     display: inline-block;
     border: none;
     background-color: #D0C9C0;
@@ -149,7 +141,7 @@ input[type=text]:focus {
     font-size: 40px;
     color: white;
     text-align: center;
-    margin: 10px 0;
+    margin: 10px 0 ;
 }
 
 .complaints {
@@ -157,31 +149,65 @@ input[type=text]:focus {
     padding: 20px;
 }
 
-.container ul {
-    height: 600px; 
+.container-list {
+    padding: 10px 30px;
+    background-color: #EFEAD8;  
+    height: 700px;
+    margin-top: -10px;
+}
+
+.container-list ul {
+    height: 650px; 
     overflow: hidden; 
     overflow-y: scroll;
     list-style: none;
-    padding: 0 50px;
+    padding: 0 20px;
 }
 
-.container li {
+.complaint-item {
     border-bottom: 1px solid black;
-    padding: 30px 10px;
+}
+
+.container-list li {
+    padding: 30px 0px 10px 10px;
     font-size: 20px;
 }
 
-.container li:hover {
-    background-color: #ddd;
+.container-list li:hover {
+    font-size: 22px;
     outline: none;
     cursor: pointer;
+}
+
+.votesBox {
+    padding: 10px;
+}
+
+.votes, .vote {
+    display:inline-block;
+}
+
+.votes {
+    vertical-align: top;
+    margin-top: -10px;
+    margin-left: -5px;
+    color: grey;
+}
+
+.vote {
+    vertical-align:middle;   
+}
+
+.vote img {
+    height: 20px;
+    width: 20px;
 }
 
 .popup {
     display: none;
     position: fixed; 
     z-index: 1; 
-    padding-top: 10%;
+    padding-top: 5%;
     left: 0;
     top: 0;
     width: 100%;
@@ -250,7 +276,8 @@ input[type=text]:focus {
     text-align: center;
     margin: auto;
     padding: 20px;
-    max-width: 400px;
+    border-radius: 7px;
+    max-width: 550px;
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
@@ -265,7 +292,186 @@ input[type=text]:focus {
 }
 
 .popup-content-complaint .heading {
+    padding-top: 20px;
+    border-top: 1px solid black;
     text-decoration: underline;
 }
+
+.popup-content-complaint .checkbox {
+    padding-top: 20px;
+    border-top: 1px solid black;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1600px) {
+    .columns {
+        margin: 0 30px;
+    }
+
+    .form {
+        flex: 1 1 55%;
+    }
+    
+    .list {
+        flex: 1 1 35%;
+    }
+
+    .container-list ul {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 1179px) {
+    .list {
+        margin-top: -80px;
+    }
+
+    .columns .list {
+        margin-bottom: 200px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .container-form {  
+        height: 650px;  
+    }
+
+    .form h2 {
+        font-size: 30px;
+    }
+
+    input[type=text], select {
+        font-size: 15px;
+    }
+
+    .container-form label {
+        font-size: 20px;
+    }
+
+    .form textarea {
+        font-size: 15px;
+    }
+
+    .submit-btn {
+        width: 70%;
+        font-size: 20px;
+    }
+
+    .container-list {
+        height: 500px;
+    }
+
+    .list h2 {
+        font-size: 30px;
+    }
+
+    .container-list ul {
+        padding: 0 10px;
+        height: 450px;
+    }
+
+    .container-list li {
+        font-size: 20px;
+        padding: 20px 10px;
+    }
+
+    .popup-content h2 {
+        font-size: 30px;
+    }
+
+    .popup-content p {
+        font-size: 20px;
+    }
+
+    .popup-content-complaint h2 {
+        font-size: 30px;
+    }
+
+    .popup-content-complaint p {
+        font-size: 20px;
+    }
+
+    .popup button {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container-form {  
+        height: 550px;  
+    }
+
+    .form h2 {
+        font-size: 25px;
+    }
+
+    input[type=text], select {
+        font-size: 12px;
+    }
+
+    .container-form label {
+        font-size: 15px;
+    }
+
+    .form textarea {
+        font-size: 12px;
+    }
+
+    .submit-btn {
+        width: 70%;
+        font-size: 15px;
+    }
+
+    .list h2 {
+        font-size: 25px;
+    }
+
+    .container-list li {
+        font-size: 15px;
+    }
+
+    .container-list li:hover {
+        font-size: 18px;
+    }
+
+    .popup-content h2 {
+        font-size: 25px;
+    }
+
+    .popup-content p {
+        font-size: 15px;
+    }
+
+    .popup-content-complaint h2 {
+        font-size: 25px;
+    }
+
+    .popup-content-complaint p {
+        font-size: 15px;
+    }
+
+    .popup-content-complaint .checkbox {
+        font-size: 15px;
+    }
+
+    .popup button {
+        font-size: 15px;
+    }
+
+    .votesBox {
+        margin-top: -10px;
+    }
+
+    .votes {
+        font-size: 15px;
+    }
+
+    .vote img {
+        height: 15px;
+        width: 15px;
+    }
+}
+   
+
 
 

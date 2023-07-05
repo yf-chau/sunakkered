@@ -1,4 +1,5 @@
-DROP TABLE IF EXISTS complain_vote;
+DROP TABLE IF EXISTS complaint_votes;
+
 DROP TABLE IF EXISTS complaints;
 
 CREATE TABLE complaints (
@@ -79,3 +80,60 @@ VALUES
         false,
         'https://example.com/graffiti.jpg'
     );
+
+INSERT INTO
+    complaint_votes (complaint_id, user_id)
+VALUES
+    (1, 1),
+    (1, 2),
+    (1, 5),
+    (4, 9),
+    (3, 4),
+    (2, 8),
+    (2, 3),
+    (5, 2),
+    (3, 7),
+    (5, 1),
+    (2, 10),
+    (4, 5),
+    (1, 8),
+    (1, 10),
+    (4, 6),
+    (3, 9),
+    (2, 1),
+    (5, 6),
+    (3, 3),
+    (5, 9),
+    (1, 4),
+    (4, 10),
+    (2, 7),
+    (2, 4),
+    (5, 3),
+    (3, 8),
+    (4, 3),
+    (1, 9),
+    (4, 8),
+    (3, 1),
+    (5, 4),
+    (2, 9),
+    (2, 2),
+    (5, 7),
+    (3, 6),
+    (5, 10),
+    (1, 3),
+    (4, 4),
+    (1, 6),
+    (1, 7),
+    (4, 2),
+    (3, 5),
+    (2, 6),
+    (2, 5),
+    (5, 8),
+    (3, 10),
+    (4, 7),
+    (1, 2),
+    (4, 1),
+    (3, 2),
+    (5, 5),
+    (1, 5),
+    (4, 9)

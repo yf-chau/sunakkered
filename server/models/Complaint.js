@@ -2,8 +2,7 @@ const db = require('../database/connect')
 
 class Complaint {
     constructor({
-        id, complainant_id, title, description, location, category,
-        isfixed, image_url
+        id, complainant_id, title, description, location, category, isfixed, image_url, votes
     }) {
         this.id = id;
         this.complainant_id = complainant_id;
@@ -13,12 +12,29 @@ class Complaint {
         this.category = category;
         this.isfixed = isfixed;
         this.image_url = image_url;
+        this.votes = votes;
     }
 
     static async getAll() {
         const response = await db.query("SELECT * FROM complaints");
         if (response.rows.length === 0) {
             throw new Error("No complaint available.")
+        }
+        return response.rows.map(e => new Complaint(e))
+    }
+
+    static async getAllIsFalse() {
+        const response = await db.query("SELECT complaints.*, COUNT(complaint_votes.user_id) AS votes FROM complaints JOIN complaint_votes ON complaints.id = complaint_votes.complaint_id WHERE isfixed = false GROUP BY complaints.id ORDER BY COUNT(complaint_votes.user_id) DESC;");
+        if (response.rows.length === 0) {
+            throw new Error("No unfixed complaint available.")
+        }
+        return response.rows.map(e => new Complaint(e))
+    }
+
+    static async getAllIsTrue() {
+        const response = await db.query("SELECT complaints.*, COUNT(complaint_votes.user_id) AS votes FROM complaints JOIN complaint_votes ON complaints.id = complaint_votes.complaint_id WHERE isfixed = true GROUP BY complaints.id ORDER BY COUNT(complaint_votes.user_id) DESC;");
+        if (response.rows.length === 0) {
+            throw new Error("No fixed complaint available.")
         }
         return response.rows.map(e => new Complaint(e))
     }
@@ -55,6 +71,14 @@ class Complaint {
             throw new Error("Unable to delete complaint.")
         }
         return new Complaint(response.rows[0]);
+    }
+
+    static async getVotes(id) {
+        const response = await db.query('SELECT COUNT(user_id) AS votes FROM complaint_votes WHERE complaint_id = $1;', [id]);
+        if (response.rows.length != 1) {
+            throw new Error("Unable to retrieve votes.")
+        }
+        return response.rows[0];
     }
 }
 

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Volunteering</title>
+    <link rel="stylesheet" href="./volunteering.css"></link>
+</head>
+<body>
+    <section class="topBar">
+        <div class="logo">
+            <img src="images/Logo-new.png" alt="Logo">
+        </div>
+    </section>
+
+    <section class="box">
+        <h2>Volunteer for an event</h2>
+        <div class="events-list">
+            <table id="events" class="events">
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Event Date</th>
+                        <th>Event Location</th>
+                        <th>Sign up</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Community Cleanup Day</td>
+                        <td>07/15/2023 9:00 AM - 12:00 PM</td>
+                        <td>City Park</td>
+                        <td class="signup"><img id="signup" src="images/hand-up.png" alt="Volunteer Icon"></td>
+                    </tr>
+                    <tr>
+                        <td>Environmental Awareness Talk</td>
+                        <td>Date: 07/25/2023 6:00 PM - 8:00 PM</td>
+                        <td>Community Center</td>
+                        <td class="signup"><img id="signup" src="images/hand-up.png" alt="Volunteer Icon"></td>
+                    </tr>
+                    <tr>
+                        <td>Fitness Bootcamp</td>
+                        <td>Date: 07/28/2023 7:00 AM - 9:00 AM</td>
+                        <td>Outdoor Park</td>
+                        <td class="signup"><img id="signup" src="images/hand-up.png" alt="Volunteer Icon"></td>
+                    </tr>
+                    <tr>
+                        <td>Community Cleanup Day</td>
+                        <td>07/15/2023 9:00 AM - 12:00 PM</td>
+                        <td>City Park</td>
+                        <td class="signup"><img id="signup" src="images/hand-up.png" alt="Volunteer Icon"></td>
+                    </tr>
+                    <tr>
+                        <td>Community Cleanup Day</td>
+                        <td>07/15/2023 9:00 AM - 12:00 PM</td>
+                        <td>City Park</td>
+                        <td class="signup"><img id="signup" src="images/hand-up.png" alt="Volunteer Icon"></td>
+                    </tr>
+                    <tr>
+                        <td>Community Cleanup Day</td>
+                        <td>07/15/2023 9:00 AM - 12:00 PM</td>
+                        <td>City Park</td>
+                        <td class="signup"><img id="signup" src="images/hand-up.png" alt="Volunteer Icon"></td>
+                    </tr>
+                    <tr>
+                        <td>Community Cleanup Day</td>
+                        <td>07/15/2023 9:00 AM - 12:00 PM</td>
+                        <td>City Park</td>
+                        <td class="signup"><img id="signup" src="images/hand-up.png" alt="Volunteer Icon"></td>
+                    </tr>
+                    <tr>
+                        <td>Community Cleanup Day</td>
+                        <td>07/15/2023 9:00 AM - 12:00 PM</td>
+                        <td>City Park</td>
+                        <td class="signup"><img id="signup" src="images/hand-up.png" alt="Volunteer Icon"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="popup-form" id="popup">
+        <div class="popup-content-form">
+            <h2>Please fill out some details</h2>
+            <p>Event: Community Cleanup Day</p>
+            <form class="volunteer-form">
+                <label>Why would you like to volunteer?</label>
+                <textarea name="description" placeholder="I would like to volunteer because..." rows="4" cols="50"></textarea>
+                <label>What are your interests?</label>
+                <textarea name="interests" placeholder="I am interested in..." rows="4" cols="50"></textarea>
+                <label>What are your skills?</label>
+                <textarea name="skills" placeholder="My skills are..." rows="4" cols="50"></textarea>
+                <label>Do you have a valid DBS?</label>
+                <select id="dbs">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <div class="btn-group">
+                    <button type="button" id="submit">Submit</button>
+                    <button type="button" id="cancel" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup-confirmation" id="confirmation">
+        <div class="popup-content-confirmation">
+            <img src="images/tick.png" alt="Tick">
+            <h2>Thank you for your application</h2>
+            <p>A member of our team will get back to you soon</p>
+            <button type="button" id="close">Close</button>
+        </div>
+    </div>
+
+    <script>
+        let formModal = document.getElementById("popup");
+
+        let confirmationModal = document.getElementById("confirmation");
+
+        let signup = document.getElementById("signup");
+
+        let submitBtn = document.getElementById("submit");
+
+        let cancelBtn = document.getElementById("cancel");
+
+        let closeBtn = document.getElementById("close");
+
+        signup.onclick = function() {
+            formModal.style.display = "block";
+        }
+
+        submitBtn.onclick = function() {
+            formModal.style.display = "none";
+            confirmationModal.style.display = "block";
+        }
+
+        cancelBtn.onclick = function() {
+            location.reload();
+        }
+
+        closeBtn.onclick = function() {
+            location.reload();
+        }
+
+    </script>
+    
+</body>
+</html>

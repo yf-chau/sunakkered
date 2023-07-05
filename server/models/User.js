@@ -33,7 +33,7 @@ class User {
     }
 
     static async getOneByUsername(username) {
-        const response = await db.query("SELECT * FROM user_account WHERE username = $1", [username]);
+        const response = await db.query("SELECT * FROM users WHERE username = $1", [username]);
         if (response.rows.length != 1) {
             throw new Error("Unable to locate user.");
         }

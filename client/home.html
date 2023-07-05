@@ -5,27 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Florin County Council</title>
     <link rel="stylesheet" href="./home.css"></link>
+    <script src="./assets/home.js" defer></script>
 </head>
 <body>
-    <section class="topBar">
+        <section class="topBar">
         <div class="logo">
             <img src="images/Logo-new.png" alt="Logo">
         </div>
 
         <!--<div class="userIcon">
             <p>Sign in</p><img src="images/user-icon.png" alt="User Icon">
-        </div>!-->
+        </div>!--> 
     </section>
-
+  
     <section class="row">
-        <div class="card">
+        <div class="card"><a href = "./events.html">
             <img src="images/events.jpg" alt="Avatar" style="width:100%">
-            <div class="container">
+            <div class="container" >
                 <h4><b>Events</b></h4> 
                 <p>Florin prides itself in it's community values and togetherness by hosting events for you.</p>
             </div>
             <button class="cardBtn"><b>See events</b> <span>&rarr;</span></button>
-        </div>
+        </a></div>
 
         <div class="card">
             <img src="images/volunteer.jpg" alt="Avatar" style="width:100%">
@@ -36,14 +37,14 @@
             <button class="cardBtn"><b>Sign up to volunteer</b> <span>&rarr;</span></button>
         </div>
 
-        <div class="card">
+        <div class="card"><a href = "./complaints.html">
             <img src="images/complaints.jpg" alt="Avatar" style="width:100%">
-            <div class="container">
+            <div class="container"> </a>
                 <h4><b>Complaints</b></h4> 
                 <p>Help us protect the community by informing us of any issues you come across in the area.</p>
             </div>
             <button class="cardBtn"><b>Submit a complaint</b> <span>&rarr;</span></button>
-        </div>
+        </a></div>
     </section>
 
     <section class="newsBoard">
@@ -53,22 +54,8 @@
         <div class="news-box">
             <div class="lists">
                 <h2>Upcoming Events</h2>
-                <ul>
-                    <li>BBQ</li>
-                    <ul class="sub-list">
-                        <li>Date: 02/07/23 / 12pm - 4pm</li>
-                        <li>Location: Community Centre</li>
-                    </ul>
-                    <li>Hiking Trip</li>
-                    <ul class="sub-list">
-                        <li>Date: 05/07/23 / 8am - 5pm</li>
-                        <li>Location: Florin Mountains</li>
-                    </ul>
-                    <li>Dog Walk</li>
-                    <ul class="sub-list">
-                        <li>Date: 06/07/23 / 12pm - 1pm</li>
-                        <li>Location: Florin Community Park</li>
-                    </ul>
+                <ul id="upcoming-events">
+
                 </ul>
             </div>
             <div class="lists">

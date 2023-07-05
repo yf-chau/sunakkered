@@ -1,6 +1,11 @@
+DROP TABLE IF EXISTS complaint_votes;
+DROP TABLE IF EXISTS complaints;
 DROP TABLE IF EXISTS events;
 DROP TABLE IF EXISTS participate;
+DROP TABLE IF EXISTS volunteer;
+DROP TABLE IF EXISTS token;
 DROP TABLE  IF EXISTS users;
+
 
 CREATE TABLE users (
   users_id INT GENERATED ALWAYS AS IDENTITY,
@@ -11,10 +16,19 @@ CREATE TABLE users (
   email VARCHAR(100),
   above18 Boolean, 
   borough VARCHAR(50),
-  password VARCHAR(100),
+  password VARCHAR(100) NOT NULL,
   image_url VARCHAR(100),
   PRIMARY KEY (users_id)
 );
+
+CREATE TABLE token (
+    token_id INT GENERATED ALWAYS AS IDENTITY,
+    users_id INT NOT NULL,
+    token CHAR(100) UNIQUE NOT NULL,
+    PRIMARY KEY (token_id),
+    FOREIGN KEY (users_id) REFERENCES users("users_id")
+);
+
 
 
 INSERT INTO users (username, first_name, last_name, phone_number, email, above18, borough, password, image_url)

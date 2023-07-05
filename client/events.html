@@ -111,12 +111,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('#calendar').fullCalendar({
-                events: 'https://fullcalendar.io/demo-events.json',
-            });
+      $(document).ready(async function () {
+        const response = await fetch("https://florincountycouncil.onrender.com/events/fullcalendar");
+        const data = await response.json()
+        $('#calendar').fullCalendar({
+          events: data,
         });
-    </script>
+      });
+  </script>
 </body>
 
 </html>

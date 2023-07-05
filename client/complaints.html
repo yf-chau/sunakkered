@@ -19,7 +19,7 @@
         <div class="columns">
             <div class="form">
                 <h2>Submit a complaint</h2>
-                <form class="complaint-form">
+                <form id= "complaint-form" class="complaint-form">
                     <div class="container-form">
                         <label>What is the complaint?</label>
                         <input class="text-box" type="text" placeholder="Enter complaint title" name="title" required/>
@@ -179,7 +179,7 @@
         let item = document.getElementById("item");
 
         btn.onclick = function(e) {
-            e.preventDefault();
+            // e.preventDefault();
             modal.style.display = "block";
         }
 

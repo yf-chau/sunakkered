@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS complaints;
 
 CREATE TABLE complaints (
     id INT GENERATED ALWAYS AS IDENTITY,
-    complainant_id INT NOT NULL,
+    complainant_id INT ,
     title VARCHAR(100) NOT NULL,
     description VARCHAR(2000),
     location VARCHAR(100),
@@ -18,9 +18,9 @@ CREATE TABLE complaints (
 CREATE TABLE complaint_votes (
     id INT GENERATED ALWAYS AS IDENTITY,
     complaint_id INT NOT NULL,
-    user_id INT NOT NULL,
+    users_id INT NOT NULL,
     FOREIGN KEY(complaint_id) REFERENCES complaints(id),
-    FOREIGN KEY(user_id) REFERENCES users(users_id),
+    FOREIGN KEY(users_id) REFERENCES users(users_id),
     PRIMARY KEY(id)
 );
 

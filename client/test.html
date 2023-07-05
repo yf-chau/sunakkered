@@ -1,0 +1,24 @@
+<script>
+    window.onload = async function () {
+
+        console.log('Get item', localStorage.getItem('token'))
+
+        const options = {
+            method: "GET",
+            headers: JSON.stringify({
+                token: localStorage.getItem('token')
+            })
+        }
+
+        console.log(options)
+        
+        const response = await fetch("http://localhost:3000/users/getid", options);
+        const data = await response.json();
+        console.log(data); // Output the value of 'data' to the console
+        document.querySelector("div").textContent = data
+    };
+</script>
+
+<body>
+    <div></div>
+</body>

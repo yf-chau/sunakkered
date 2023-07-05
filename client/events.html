@@ -97,7 +97,7 @@
     <script>
       $(document).ready(async function () {
 
-        const response = await fetch("http://localhost:3000/events/fullcalendar");
+        const response = await fetch("https://florincountycouncil.onrender.com/events/fullcalendar");
         const data = await response.json()
 
         $('#calendar').fullCalendar({

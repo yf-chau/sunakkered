@@ -1,7 +1,14 @@
+## API routes for Complaints controller
+
 | Route             | Method | Response                                                           | Usage                                                                        |
 | ----------------- | ------ | ------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
 | `/complaints`     | `GET`  | Returns a JSON object containing all complaints.                   | Access http://florincountycouncil.onrender.com/complaints                    |
+| `/complaints`     | `GET`  | Returns a JSON object containing all complaintswhich isfixed = false, and their "votes".                   | Access http://florincountycouncil.onrender.com/complaints/isfalse                    |
+| `/complaints`     | `GET`  | Returns a JSON object containing all complaintswhich isfixed = true, and their "votes".                   | Access http://florincountycouncil.onrender.com/complaints/istrue                    |
 | `/complaints/:id` | `GET`  | Returns a JSON object containing the complaints selected by `:id`. | Send a GET request to http://florincountycouncil.onrender.com/complaints/:id |
 | `/complaints` | `POST` | Accepts a JSON object and uses it to create and store a new complaints. | Send a POST request to http://florincountycouncil.onrender.com/complaints with a JSON object in the body of the request.<br/><br/>Example:<br/>{<br/>"complainant_id": 2,<br/>"title": "Graffiti on Public Building",<br/>"description": "The side wall of the public library on Elm Street has been defaced with graffiti. This vandalism is not only an eyesore but also reflects poorly on the community. It should be cleaned up promptly.",<br/>"location": "Elm Street Public Library",<br/>"category": "Vandalism",<br/>"isfixed": false,<br/>"image_url": "https://example.com/graffiti.jpg"<br/>}|
 | `/complaints/:id` | `PATCH` | Accepts a JSON object and uses it to update the `isfixed` value of the complaint. | Send a PATCH request to http://florincountycouncil.onrender.com/complaints/:id with a JSON object in the body of the request. <br/><br/>Example:<br/>{<br/>"isfixed": true,<br/>} |
 | `/complaints/:id` | `DELETE`| Delete the complaints selected by `:id`. | Send a DELETE request to http://florincountycouncil.onrender.com/complaints/:id |
+| `/showvotes/:id` | `GET`| Get the number of "votes" for a complaint selected by `:id`. | Access http://florincountycouncil.onrender.com/complaints/showvotes/:id  |
+| To be implemented | `GET`| Show a list of complaint_id which the user selected by [`users_id`/`username`/`uuid`] "voted". | |
+| To be implemented | `PATCH`| Vote for a complaint. | |

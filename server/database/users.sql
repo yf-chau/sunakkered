@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS events;
 DROP TABLE IF EXISTS participate;
+DROP TABLE IF EXISTS volunteer;
 DROP TABLE  IF EXISTS users;
 
 CREATE TABLE users (

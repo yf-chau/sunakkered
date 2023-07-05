@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS complaint_votes;
 DROP TABLE IF EXISTS complaints;
 DROP TABLE IF EXISTS events;
 DROP TABLE IF EXISTS participate;
+DROP TABLE IF EXISTS volunteer;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (

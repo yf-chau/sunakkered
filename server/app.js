@@ -8,6 +8,7 @@ const userRouter = require('./routers/users');
 const participateRouter = require('./routers/participate');
 const eventRouter = require('./routers/events');
 const complaintRouter = require('./routers/complaints');
+const volunteerRouter = require('./routers/volunteer');
 
 app.use(cors());
 app.use(express.json());
@@ -22,10 +23,11 @@ app.get("/", (req, res) => {
 })
 
 
-app.use("/users", userRouter)
-app.use("/participate", participateRouter)
+app.use("/users", userRouter);
+app.use("/participate", participateRouter);
 app.use("/events", eventRouter);
 app.use("/complaints", complaintRouter);
+app.use("/volunteer", volunteerRouter)
 
 
 module.exports = app;

@@ -12,6 +12,7 @@ CREATE TABLE events (
     category VARCHAR(100),
     organiser_id INT,
     participant_id INT,
+    approval BOOLEAN DEFAULT TRUE,
     -- approver_id INT,
     -- volunteer_id INT,
     FOREIGN KEY(organiser_id) REFERENCES users(users_id),
@@ -32,7 +33,8 @@ INSERT INTO
         location,
         category,
         organiser_id,
-        participant_id
+        participant_id,
+        approval
         -- approver_id,
         -- volunteer_id,
     )
@@ -47,7 +49,8 @@ VALUES
         'City Park',
         'Community Service',
         NULL,
-        NULL
+        NULL,
+        FALSE
     ),
     (
         'Summer Concert in the Park',
@@ -59,7 +62,8 @@ VALUES
         'Central Park',
         'Entertainment',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Health and Wellness Workshop',
@@ -71,7 +75,8 @@ VALUES
         'Community Center',
         'Education',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Family Fun Day',
@@ -83,7 +88,8 @@ VALUES
         'Town Square',
         'Family',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Art Exhibition',
@@ -95,7 +101,8 @@ VALUES
         'Art Gallery',
         'Arts & Culture',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Outdoor Yoga Session',
@@ -107,7 +114,8 @@ VALUES
         'Botanical Gardens',
         'Health & Wellness',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Food Festival',
@@ -119,7 +127,8 @@ VALUES
         'Food Park',
         'Culinary',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Sports Tournament',
@@ -131,7 +140,8 @@ VALUES
         'Sports Complex',
         'Sports',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Environmental Awareness Talk',
@@ -143,7 +153,8 @@ VALUES
         'Community Center',
         'Education',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Fashion Show',
@@ -155,7 +166,8 @@ VALUES
         'Event Hall',
         'Fashion',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Technology Expo',
@@ -167,7 +179,8 @@ VALUES
         'Convention Center',
         'Technology',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Pets Adoption Day',
@@ -179,7 +192,8 @@ VALUES
         'Animal Shelter',
         'Community Service',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Outdoor Film Screening',
@@ -191,7 +205,8 @@ VALUES
         'Park Amphitheater',
         'Entertainment',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Art Workshop',
@@ -203,7 +218,8 @@ VALUES
         'Art Studio',
         'Arts & Culture',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Fitness Bootcamp',
@@ -215,7 +231,8 @@ VALUES
         'Outdoor Park',
         'Health & Wellness',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Local Farmers Market',
@@ -227,7 +244,8 @@ VALUES
         'Town Square',
         'Food & Agriculture',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Music Workshop',
@@ -239,7 +257,8 @@ VALUES
         'Music Academy',
         'Arts & Culture',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Charity Run',
@@ -251,7 +270,8 @@ VALUES
         'Community Park',
         'Community Service',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Science Fair',
@@ -263,7 +283,8 @@ VALUES
         'School Auditorium',
         'Education',
         NULL,
-        NULL
+        NULL,
+        TRUE
     ),
     (
         'Gardening Workshop',
@@ -275,5 +296,6 @@ VALUES
         'Community Garden',
         'Hobbies & Recreation',
         NULL,
-        NULL
+        NULL,
+        TRUE
     );

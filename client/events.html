@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Florin Events</title>
-  <link rel="stylesheet" href="./events.css">
-  </link>
-  <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florin Events</title>
+    <link rel="stylesheet" href="./events.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap" rel="stylesheet">
+    <script  src="./assets/events.js" defer></script>
 </head>
 <section class="topBar">
 
@@ -57,18 +57,17 @@
   -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
   </head>
-
   <body>
     <div class="container">
       <div id="calendar"></div>
-
+   
       <div id="form">
         <h2>Event Form</h2>
         <form>
           <label for="eventTitle">Event Title</label>
           <input type="text" placeholder="Enter Event Title" id="eventTitle" name="eventTitle" required>
           <label for="eventDesc">Event Description</label>
-          <input type="text" placeholder="Enter Event Description" id="eventLocation" name="eventLocation" required>
+          <input type="text" placeholder="Enter Event Description" id="eventDescription" name="eventDescription" required>
 
           <label for="address">Location</label>
           <select class="text-box" type="select" name="borough" id="borough" required>
@@ -98,14 +97,16 @@
     <script>
       $(document).ready(async function () {
 
-        const response = await fetch("https://florincountycouncil.onrender.com/events/fullcalendar");
+        const response = await fetch("http://localhost:3000/events/fullcalendar");
         const data = await response.json()
 
         $('#calendar').fullCalendar({
           events: data,
         });
       });
+
+  </script>
+</body>
     </script>
   </body>
-
 </html>

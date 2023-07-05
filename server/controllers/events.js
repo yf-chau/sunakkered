@@ -1,4 +1,5 @@
 const Event = require("../models/Event")
+const Admin = require('../models/Admin');
 
 class FullCalendarEvent {
     constructor({
@@ -33,7 +34,7 @@ async function index(req, res) {
 
 async function fullcalendar(req, res) {
     try {
-        const events = await Event.getAll();
+        const events = await Event.getAllApprove();
         const fullCalendarEvents = mapEventsToFullCalendar(events);
         res.status(200).json(fullCalendarEvents)
     } catch (error) {
@@ -72,8 +73,13 @@ async function search(req, res) {
 }
 
 async function create(req, res) {
+    
     try {
         const data = req.body;
+        const eventData = {
+            status: 'pending'
+        };
+        
         const event = await Event.create(data)
         res.status(201).json(event)
     } catch (error) {
@@ -113,4 +119,24 @@ async function upcoming(req, res) {
     }
 }
 
-module.exports = { index, show, showByDate, search, create, update, destroy, upcoming, fullcalendar }
+async function approveEvent(req, res) {
+    try {
+        const eventId = req.params.id;
+        const adminId = req.user.id; // Assuming you have the admin ID available in the request
+      
+          // Check if the user is an admin
+        const admin = await Admin.getOneByAdminId(adminId);
+          if (!admin) {
+            throw new Error('Admin not found.');
+          }
+      
+          // Update the post status to 'approved'
+        const updatedEvent = await Event.updateStatus(eventId, 'approved');
+      
+          res.status(200).json(updatedEvent);
+        } catch (err) {
+          res.status(400).json({ error: err.message });
+        }
+      }
+
+module.exports = { index, show, showByDate, search, create, update, destroy, upcoming, approveEvent , fullcalendar }

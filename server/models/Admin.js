@@ -53,6 +53,7 @@ async destroy() {
     }
     return new Admin(response.rows[0]);
 }
+
 }
 
 module.exports = Admin;

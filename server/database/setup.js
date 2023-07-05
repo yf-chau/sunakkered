@@ -4,6 +4,9 @@ const db = require('./connect');
 
 const sql_admin = fs.readFileSync("./server/database/admin.sql").toString();
 
+db.query(sql_admin)
+    .then(data => console.log("Admin table Set up complete"))
+    .catch(error => console.log(error))
 
 db.query(sql_admin)
     .then(data => console.log("Admin table Set up complete"))

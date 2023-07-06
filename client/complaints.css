@@ -15,23 +15,49 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    position: relative;
     height: 200px;
-    width: 100%;
-    margin-top: 40px;
+    width: 95%;
+    margin-top: 20px;
     background-color: #EFEAD8;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo {
-    position: absolute;
+    display: inline-block;
+    margin-top: 10px;
 }
-  
-.logo img {
+
+.logo-img {
     height: 200px;
     width: 200px;
 }
 
+.nav-link, nav-item {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #6B7E6D;
+    padding: 0;
+    margin: 10px 70px 0 60px;
+}
+
+.welcome {
+    background-color: #94B29B;
+    padding: 15px;
+    width: 95%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .row {
-    margin: 50px 0;
+    margin: 30px 0;
     padding-bottom: 100px;
 }
 
@@ -44,17 +70,23 @@ body {
     gap: 7em;
     flex-wrap: wrap;
     height: 600px;
-    margin: 0 100px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .form {
     background-color: #94B29B;
     flex: 1 1 60%;
+    border-radius: 10px;
+    padding: 10px 20px 20px 20px;
 }
 
 .list {
     background-color: #94B29B;
     flex: 1 1 30%;
+    border-radius: 10px;
+    padding: 10px 20px 20px 20px;
 }
 
 .form h2 {
@@ -62,17 +94,20 @@ body {
     color: white;
     text-align: center;
     margin: 10px 0;
+    
 }
 
 .complaint-form {
     background-color: #94B29B;
     padding: 10px 20px 20px 20px;
+    border-radius: 10px;
 }
 
 .container-form {
     padding: 30px;
     background-color: #EFEAD8;  
-    height: 700px;  
+    height: 800px;
+    border-radius: 10px;  
 }
 
 .container-form label {
@@ -115,13 +150,13 @@ input[type=text]:focus {
     outline: none;
 }
 
-.submit-btn:hover {
-    opacity:1;
+.submit-form:hover {
+    background-color: #6B7E6D;
   }
   
-.submit-btn {
+.submit-form {
     width: 20%;
-    border-radius: 7px;
+    border-radius: 10px;
     background-color: #94B29B;
     color: #fff;
     padding: 14px 20px;
@@ -147,17 +182,19 @@ input[type=text]:focus {
 .complaints {
     background-color: #94B29B;
     padding: 20px;
-}
+    border-radius: 10px;
+    }
 
 .container-list {
     padding: 10px 30px;
     background-color: #EFEAD8;  
-    height: 700px;
+    height: 800px;
     margin-top: -10px;
+    border-radius: 10px;
 }
 
 .container-list ul {
-    height: 650px; 
+    height: 750px; 
     overflow: hidden; 
     overflow-y: scroll;
     list-style: none;
@@ -222,7 +259,7 @@ input[type=text]:focus {
     text-align: center;
     margin: auto;
     padding: 20px;
-    border-radius: 7px;
+    border-radius: 10px;
     max-width: 400px;
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
@@ -265,7 +302,7 @@ input[type=text]:focus {
     background: #94B29B;
     color: #fff;
     font-size: 18px;
-    border-radius: 7px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -276,7 +313,7 @@ input[type=text]:focus {
     text-align: center;
     margin: auto;
     padding: 20px;
-    border-radius: 7px;
+    border-radius: 10px;
     max-width: 550px;
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
@@ -472,6 +509,10 @@ input[type=text]:focus {
     }
 }
    
-
+@media screen and (max-width: 992px) {
+    .topBar {
+        height: 400px;
+    }
+}
 
 

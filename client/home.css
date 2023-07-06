@@ -102,6 +102,15 @@ body {
     margin: 50px 10px;
 }
 
+.card a {
+    text-decoration: none;
+    color: white;
+}
+
+.card a:hover {
+    opacity: 0.7;
+}
+
 .nav-bar {
     position: relative;
     overflow: hidden;

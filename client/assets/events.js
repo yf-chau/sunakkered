@@ -1,6 +1,4 @@
-
-
-document.getElementById("form").addEventListener("submit", async (e) => {
+document.getElementById("inner-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const form = new FormData(e.target);
@@ -32,62 +30,73 @@ document.getElementById("form").addEventListener("submit", async (e) => {
     }
 })
 
+
 async function checkToken() {
     // Retrieve the user's token from local storage or cookies
-    const token = await localStorage.getItem('token'); // If using 
+    const token = await localStorage.getItem('token');
     if (token && token !== "") {
-      
+        document.getElementById('inner-form').style.display = 'block';
+        document.getElementById('signInPls').style.display = 'none'
         document.getElementById('signin-btn').style.display = 'none';
-        document.getElementById('signout-btn').style.display = 'block';
-        
-      console.log("User is authenticated");
-      // For example, you can show authenticated features or redirect the user to a different page
+         document.getElementById('signout-btn').style.display = 'block';
+        document.getElementById('pleaseSignUp').style.display = 'none';   
+        let handleFormSubmit = true;
+        console.log("User is authenticated");
+        // For example, you can show authenticated features or redirect the user to a different page
     } else {
+        document.getElementById('inner-form').style.display = 'none' ;
         document.getElementById('signin-btn').style.display = 'block';
+        document.getElementById('pleaseSignUp').style.display = 'block';
         document.getElementById('signout-btn').style.display = 'none';
-      console.log("User is not authenticated");
-      // For example, you can show a sign-in form or redirect the user to a login page
+        document.getElementById('signInPls').style.display = 'block'
+        let handleFormSubmit = false
+        console.log("User is not authenticated");
+        // For example, you can show a sign-in form or redirect the user to a login page
     }
-  }
-  function checkAuthentication() {
-    const token = localStorage.getItem('token');
-    if (token && token !== '') {
-      // User is authenticated
-      showForm();
+}
+
+// Call the checkToken function to check the user's authentication status when the page loads
+window.addEventListener('load', checkToken);
+
+document.getElementById("signInPls").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.target);
+
+    const options = {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: form.get("username"),
+            password: form.get("password")
+        })
+    }
+
+    const response = await fetch("http://localhost:3000/users/login", options);
+    // const response = await fetch("https://florincountycouncil.onrender.com/users/login", options);
+    const data = await response.json();
+
+    if (response.status == 200) {
+        localStorage.setItem("token", data.token);
+        window.location.assign("events.html");
     } else {
-      // User is not authenticated
-      hideForm();
+        alert(data.error);
     }
-  }
-  
-  // Show the form
-  function showForm() {
-    const form = document.getElementById('form');
-    form.style.display = 'block';
-  }
-  
-  // Hide the form
-  function hideForm() {
-    const form = document.getElementById('form');
-    form.style.display = 'none';
-  }
-  
-  // Call the checkAuthentication function to check the user's authentication status when the page loads
-  window.addEventListener('load', checkAuthentication);
+})
 
-
-  document.getElementById("signout-btn").addEventListener("click", async (e) => {
-    function signOut() {
+document.getElementById("signout-btn").addEventListener("click", async (e) => {
+    function signOut(response) {
         // Clear the user's token from local storage or cookies
         localStorage.removeItem('token'); // If using local storage
         if (response.status == 201) {
             window.location.assign("home.html");
-              
         } else {
-            alert(data.error);
+            alert(response.error);
         }
-      } signOut()
-  })
- 
-  checkToken();
-  
+    }
+
+    signOut();
+})

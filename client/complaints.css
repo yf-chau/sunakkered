@@ -54,6 +54,7 @@ body {
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+    color: #fff;
 }
 
 .row {
@@ -62,7 +63,7 @@ body {
 
 .columns {
     display: flex;
-    gap: 7em;
+    gap: 5em;
     flex-wrap: wrap;
     width: 95%;
     margin-left: auto;
@@ -177,7 +178,7 @@ input[type=text]:focus {
     background-color: #94B29B;
     padding: 20px;
     border-radius: 10px;
-    }
+}
 
 .container-list {
     padding: 10px 30px;
@@ -339,22 +340,19 @@ input[type=text]:focus {
         margin: 0 30px;
     }
 
-    .form {
-        flex: 1 1 55%;
-    }
-    
-    .list {
-        flex: 1 1 35%;
-    }
-
     .container-list ul {
         padding: 0 20px;
     }
 }
 
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1300px) {
+    .form {
+        flex: 1 1 55%;
+    }
+    
     .list {
-        margin-top: -80px;
+        flex: 1 1 45%;
+        margin-top: -50px;
     }
 }
 

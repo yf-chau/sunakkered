@@ -37,10 +37,8 @@ body {
 }
 
 .nav-link, nav-item {
-    font-size: 1rem;
     font-weight: bold;
-    color: #6B7E6D;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #6B7E6D;
     padding: 0;
     margin: 10px 70px 0 60px;
@@ -81,12 +79,14 @@ body {
     background-color: #94B29B;
     flex: 1 1 60%;
     border-radius: 10px;
+    padding: 10px 20px 20px 20px;
 }
 
 .list {
     background-color: #94B29B;
     flex: 1 1 30%;
     border-radius: 10px;
+    padding: 10px 20px 20px 20px;
 }
 
 .form h2 {
@@ -94,6 +94,7 @@ body {
     color: white;
     text-align: center;
     margin: 10px 0;
+    
 }
 
 .complaint-form {
@@ -150,12 +151,12 @@ input[type=text]:focus {
 }
 
 .submit-form:hover {
-    opacity:1;
+    background-color: #6B7E6D;
   }
   
 .submit-form {
     width: 20%;
-    border-radius: 7px;
+    border-radius: 10px;
     background-color: #94B29B;
     color: #fff;
     padding: 14px 20px;
@@ -182,7 +183,7 @@ input[type=text]:focus {
     background-color: #94B29B;
     padding: 20px;
     border-radius: 10px;
-}
+    }
 
 .container-list {
     padding: 10px 30px;
@@ -258,7 +259,7 @@ input[type=text]:focus {
     text-align: center;
     margin: auto;
     padding: 20px;
-    border-radius: 7px;
+    border-radius: 10px;
     max-width: 400px;
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
@@ -301,7 +302,7 @@ input[type=text]:focus {
     background: #94B29B;
     color: #fff;
     font-size: 18px;
-    border-radius: 7px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -312,7 +313,7 @@ input[type=text]:focus {
     text-align: center;
     margin: auto;
     padding: 20px;
-    border-radius: 7px;
+    border-radius: 10px;
     max-width: 550px;
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
@@ -508,6 +509,10 @@ input[type=text]:focus {
     }
 }
    
-
+@media screen and (max-width: 992px) {
+    .topBar {
+        height: 400px;
+    }
+}
 
 

@@ -2,14 +2,14 @@ const db = require('../database/connect')
 
 class Event {
     constructor({
-        event_id, event_name, event_start_date, event_start_time, event_end_date, event_end_time,
-        event_description, location, category, organiser_id, approver_id, volunteer_id, participant_id
+        event_id, event_name, event_start_date, event_start_time, event_end_time,
+        event_description, location, category, organiser_id, participant_id, approval, needVolunteer, volunteer_num
     }) {
         this.event_id = event_id
         this.event_name = event_name
-        
+
         this.event_start_date = event_start_date.toISOString().split('T')[0];
-        
+
         this.event_start_time = event_start_time
         this.event_end_time = event_end_time
         this.event_description = event_description
@@ -19,7 +19,7 @@ class Event {
         this.participant_id = participant_id
         this.approval = approval
         this.needVolunteer = needVolunteer
-        this.volunteer_num = volunteer_num,
+        this.volunteer_num = volunteer_num
     }
 
     static async getAll() {

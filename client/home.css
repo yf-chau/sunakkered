@@ -120,13 +120,21 @@ body {
     font-size: 35px;
     color: white;
     text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.outer {
+    background-color: #94B29B;
+    padding-bottom: 40px;
+    margin: 0 40px;
+    border-radius: 0 0 10px 10px;
 }
 
 .news-box {
     background-color: #EFEAD8;
     margin: 0 40px;
     padding: 100px 0px;
-    border: 30px solid #D0C9C0;
+    border-radius: 10px;
     position: relative; 
     display: flex;
     flex-direction: row;

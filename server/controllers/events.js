@@ -42,6 +42,15 @@ async function fullcalendar(req, res) {
     }
 }
 
+async function needsVolunteers(req, res) {
+    try {
+        const events = await Event.getAllNeedVolunteer();
+        res.status(200).json(events)
+    } catch (error) {
+        res.status(500).json({ "error": error.message })
+    }
+}
+
 async function show(req, res) {
     try {
         const id = parseInt(req.params.id);
@@ -139,4 +148,4 @@ async function approveEvent(req, res) {
         }
       }
 
-module.exports = { index, show, showByDate, search, create, update, destroy, upcoming, approveEvent , fullcalendar }
+module.exports = { index, show, showByDate, search, create, update, destroy, upcoming, approveEvent , fullcalendar, needsVolunteers }

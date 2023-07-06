@@ -10,5 +10,6 @@
 | `/complaints/:id` | `PATCH` | Accepts a JSON object and uses it to update the `isfixed` value of the complaint. | Send a PATCH request to http://florincountycouncil.onrender.com/complaints/:id with a JSON object in the body of the request. <br/><br/>Example:<br/>{<br/>"isfixed": true,<br/>} |
 | `/complaints/:id` | `DELETE`| Delete a complaint selected by `:id`. | Send a DELETE request to http://florincountycouncil.onrender.com/complaints/:id |
 | `/showvotes/:id` | `GET`| Get the number of "votes" for a complaint selected by `:id`. | Access http://florincountycouncil.onrender.com/complaints/showvotes/:id  |
-| To be implemented | `GET`| Show a list of complaint_id which a user, selected by [`users_id`/`username`/`uuid`], "voted" for. | |
-| To be implemented | `PATCH`| Vote for a complaint by a user. | |
+| `/showcomplaint/:user_id` | `GET`| Show a list of complaint_id which a user, selected by [`users_id`], "voted" for. | Access http://florincountycouncil.onrender.com/complaints/showcomplaint/:id |
+| `/votecomplaint/:user_id` | `POST`| Vote for a complaint by a user by passing the complaint_id in the body. | Send a POST request to http://florincountycouncil.onrender.com/votecomplaint/:id with a JSON object in the body of the request. <br/><br/>Example:<br/>{<br/>"complaint_id": 1,<br/>}|
+| `/unvotecomplaint/:user_id` | `DELETE`| Unvote for a complaint by a user by passing the complaint_id in the body. | Send a DELETE request to http://florincountycouncil.onrender.com/unvotecomplaint/:id with a JSON object in the body of the request. <br/><br/>Example:<br/>{<br/>"complaint_id": 1,<br/>}|

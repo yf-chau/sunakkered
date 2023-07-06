@@ -1,4 +1,3 @@
-require("dotenv").config();
 const fs = require('fs');
 const db = require('./connect');
 
@@ -23,11 +22,16 @@ async function setupTables() {
         await db.query(sql_events)
         await db.query(sql_complaints)
 
-        console.log("All tables created.")
+        //console.log("All tables created.")
     } catch (error) {
         console.log(error);
     }
 }
 
 //run the async function
-setupTables()
+
+const destroyDbEnv = async () => {
+    // await db.query("DROP TABLE IF EXISTS *;")
+}
+
+module.exports = { setupTables, destroyDbEnv };

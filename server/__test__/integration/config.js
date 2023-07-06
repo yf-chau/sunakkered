@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const request = require('supertest');
-const apiServer = require('../../api');
+const apiServer = require('../../app');
 
 
 global.request = request 

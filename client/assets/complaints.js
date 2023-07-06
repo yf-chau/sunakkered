@@ -15,7 +15,8 @@ document.getElementById("complaint-form").addEventListener("submit", async (e) =
         body: JSON.stringify({
             title: form.get("title"),
             description: form.get("description"),
-            location: form.get("location"),           
+            category: form.get("category"),
+            location: form.get("borough"),           
         })
     }
 
@@ -23,11 +24,10 @@ document.getElementById("complaint-form").addEventListener("submit", async (e) =
     // const response = await fetch("https://florincountycouncil.onrender.com/users/register", options);
     const data = await response.json();
 
-    if (response.status == 201) {
-        window.location.assign("home.html");
-    } else {
+    if (response.status != 201) {
         alert(data.error);
-    }
+        
+    } 
 })
 
 
@@ -62,3 +62,4 @@ async function checkToken() {
         }
       } signOut()
   })
+  checkToken()

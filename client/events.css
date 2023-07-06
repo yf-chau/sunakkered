@@ -42,10 +42,8 @@
 /* Navbar */
 .nav-link, nav-item {
     font-family: 'Ysabeau Office', sans-serif;
-    font-size: 1rem;
     font-weight: bold;
-    color: #6B7E6D;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #6B7E6D;
     padding: 0;
     margin: 10px 70px 0 60px;
@@ -115,7 +113,7 @@ input[type=date], input[type=time], input[type=text], select[name="borough"], in
 #form button {
     width: 40%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #94B29B;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -127,6 +125,10 @@ input[type=date], input[type=time], input[type=text], select[name="borough"], in
     margin-left: 30%;
     margin-top: 20px;
   }
+
+#form button:hover {
+background-color: #6B7E6D;}     
+
 
 .container {
     display: flex;
@@ -207,8 +209,5 @@ input[type=date], input[type=time], input[type=text], select[name="borough"], in
 @media screen and (max-width: 992px) {
     .topBar {
         height: 400px;
-    }
-    #welcome .logo-img {
-        display: none;
     }
 }

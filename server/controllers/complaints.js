@@ -78,15 +78,37 @@ async function showVotes(req, res) {
     }
 }
 
-// async function showVotedComplaints(req, res) {
-//     try {
-//         //const user_id = ?????
-//         const voted_complaints = await Complaint.getVotedComplaints(user_id)
-//         res.status(200).json(voted_complaints)
-//     } catch (error) {
-//         res.status(404).json({ "error": error.message })
-//     }
-// }
+async function showVotedComplaints(req, res) {
+    try {
+        const user_id = parseInt(req.params.user_id);
+        const voted_complaints = await Complaint.getUserComplaint(user_id)
+        res.status(200).json(voted_complaints)
+    } catch (error) {
+        res.status(404).json({ "error": error.message })
+    }
+}
+
+async function voteComplaint(req, res) {
+    try {
+        const user_id = parseInt(req.params.user_id);
+        const complaint_id = req.body.complaint_id
+        const response = await Complaint.voteComplaint(user_id, complaint_id)
+        res.status(200).json(response)
+    } catch (error) {
+        res.status(404).json({ "error": error.message })
+    }
+}
+
+async function unvoteComplaint(req, res) {
+    try {
+        const user_id = parseInt(req.params.user_id);
+        const complaint_id = req.body.complaint_id
+        const response = await Complaint.unvoteComplaint(user_id, complaint_id)
+        res.status(200).json(response)
+    } catch (error) {
+        res.status(404).json({ "error": error.message })
+    }
+}
 
 
-module.exports = { index, show, create, update, destroy, isFalse, isTrue, showVotes }
+module.exports = { index, show, create, update, destroy, isFalse, isTrue, showVotes, showVotedComplaints, voteComplaint, unvoteComplaint }

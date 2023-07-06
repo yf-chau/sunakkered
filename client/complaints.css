@@ -389,7 +389,7 @@ input[type=text]:focus {
         font-size: 15px;
     }
 
-    .submit-btn {
+    .submit-form {
         width: 70%;
         font-size: 20px;
     }
@@ -454,7 +454,7 @@ input[type=text]:focus {
         font-size: 12px;
     }
 
-    .submit-btn {
+    .submit-form {
         width: 70%;
         font-size: 15px;
     }

@@ -1,42 +1,32 @@
-const { v4: uuidv4 } = require("uuid");
+const Token = require("../models/token");
+const Admin = require("../models/Admin");
 
-const db = require("../database/connect");
+async function authenticator(req, res, next) {
+  try {
+    const userToken = req.headers["authorization"];
 
-class Token {
-
-    constructor({ token_id, user_id, token }){
-        this.token_id = token_id;
-        this.user_id = user_id;
-        this.token = token;
+    if (!userToken) {
+      throw new Error("User not authenticated.");
     }
 
-    static async create(user_id) {
-        const token = uuidv4();
-        const response = await db.query("INSERT INTO token (user_id, token) VALUES ($1, $2) RETURNING token_id;",
-            [user_id, token]);
-        const newId = response.rows[0].token_id;
-        const newToken = await Token.getOneById(newId);
-        return newToken;
+    const token = await Token.getOneByToken(userToken);
+    if (!token) {
+      throw new Error("Invalid token.");
     }
 
-    static async getOneById(id) {
-        const response = await db.query("SELECT * FROM token WHERE token_id = $1", [id]);
-        if (response.rows.length != 1) {
-            throw new Error("Unable to locate token.");
-        } else {
-            return new Token(response.rows[0]);
-        }
+    const admin = await Admin.getOneByAdminId(token.admin_id);
+    if (!admin) {
+      throw new Error("Admin not found.");
     }
 
-    static async getOneByToken(token) {
-        const response = await db.query("SELECT * FROM token WHERE token = $1", [token]);
-        if (response.rows.length != 1) {
-            throw new Error("Unable to locate token.");
-        } else {
-            return new Token(response.rows[0]);
-        }
-    }
+  
+    req.admin = admin;
 
+    next();
+
+  } catch (err) {
+    res.status(403).json({ error: err.message });
+  }
 }
 
-module.exports = Token;
+module.exports = authenticator;

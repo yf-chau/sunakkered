@@ -1,11 +1,14 @@
 const { Router } = require('express');
 
 const eventController = require('../controllers/events.js');
-
+const authenticator = require("../middleware/authenticator");
 const eventRouter = Router();
 
 //show all events
-eventRouter.get("/", eventController.index);
+eventRouter.get("/", authenticator, eventController.index);
+
+//show all events for fullCalendar plugin
+eventRouter.get("/fullcalendar", eventController.fullcalendar);
 
 //show upcoming three events
 eventRouter.get("/upcoming", eventController.upcoming);
@@ -20,12 +23,14 @@ eventRouter.get("/search", eventController.search);
 eventRouter.get("/:id", eventController.show);
 
 //create an event
-eventRouter.post("/", eventController.create)
+eventRouter.post("/create", eventController.create)
 
 //update an event by id
 eventRouter.patch("/:id", eventController.update)
 
 //delete an event by id
 eventRouter.delete("/:id", eventController.destroy)
+
+eventRouter.get("/:id/approve", eventController.approveEvent)
 
 module.exports = eventRouter;

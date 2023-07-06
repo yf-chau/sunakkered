@@ -4,32 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Complaints</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./complaints.css"></link>
+    <script src="./assets/complaints.js" defer></script>
+</head>
 </head>
 <body>
     <section class="topBar">
-        <div class="title">
-            <h1>Community Complaints</h1>
-        </div>
-        <div class="logo">
-            <img src="images/Logo-new.png" alt="Logo">
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="./home.html"><img src="images/Logo-new.png" alt="Logo" class="logo-img"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./voluteering.html">Volunteer</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="signin-btn" href="./sign-in.html">Sign-in</a>
+                        <a class="nav-link" id="signout-btn" href="./home.html" style="display: none;">Sign-out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </section>
 
+    <div class="welcome">
+        <p>Any issues arising in Florin? Let us know!</p>
+        <p>You can do so by submitting a complaint via the form below and one of our members will investigate it.</p>
+    </div>
     <section class="row">
         <div class="columns">
             <div class="form">
                 <h2>Submit a complaint</h2>
-                <form class="complaint-form">
-                    <div class="container">
-                        <label for="text">What is the complaint?</label>
+                <form id= "complaint-form" class="complaint-form">
+                    <div class="container-form">
+                        <label>What is the complaint?</label>
                         <input class="text-box" type="text" placeholder="Enter complaint title" name="title" required/>
-                        <label for="text">Description:</label>
+                        <label>Description:</label>
                         <textarea name="description" placeholder="Enter a detailed description of the issue" rows="4" cols="50"></textarea>
-                        <label for="text">Location:</label>
-                        <input class="text-box" type="text" placeholder="Enter location of issue " name="location"/>
-                        <label for="text">Category:</label>
-                        <select id="cars">
+                        <label for="address">Location</label>
+                        <select class="text-box" type="select" name="borough" id="borough" required>
+                            <option value="none" disabled selected>Select a Borough</option>
+                            <option value="crestview">Crestview</option>
+                            <option value="oakwood">Oakwood</option>
+                            <option value="hillside">Hillside</option>
+                            <option value="maplewood">Maplewood</option>
+                            <option value="westlake">Westlake</option>
+                            <option value="fairview">Fairview</option>
+                            <option value="northwood">Northwood</option>
+                            <option value="other">Other - Please specify in the description</option>
+                        </select>
+                        <label>Category:</label>
+                        <select id="category">
                             <option value="" disabled selected>Select your option</option>
                             <option value="Road">Road</option>
                             <option value="Housing">Housing</option>
@@ -43,7 +82,7 @@
                             <option value="Other">Other</option>
                         </select>
                         <div class="submit">
-                            <button type="submit" class="submit-btn" id="submit">Submit</button>
+                            <button type="submit" class="submit-form" id="submit">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -51,24 +90,95 @@
             <div class="list">
                 <h2>Current complaints</h2>
                 <div class="complaints">
-                <div class="container">
+                <div class="container-list">
                     <ul>
-                        <li id="item">Dog poo in the park!</li>
-                        <li>Rubbish everywhere on Longsdale Lane</li>
-                        <li>Pothole on Main Street</li>
-                        <li>Graffiti on Town Hall</li>
-                        <li>Shattered Glass near new Estate</li>
-                        <li>Uncollected bins on Fl Avenue</li> 
-                        <li>Drainage problem on Main Street</li>
-                        <li>Illegal parking on Main Street</li>
-                        <li>No water in community center</li> 
+                        <div class="complaint-item">
+                            <li id="item">Dog poo in the park!</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Rubbish everywhere on Longsdale Lane</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Pothole on Main Street</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Graffiti on Town Hall</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Shattered glass outside New Estate</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Uncollected bins on FL Avenue</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Drainage problem on Main Street</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Illegal parking on Main Street</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
+                        <div class="complaint-item">
+                            <li id="item">Burst pipe in community center</li>
+                            <div class="votesBox">
+                                <div class="vote">
+                                    <img src="images/exclamation-mark.png" alt="Exclamation point">
+                                </div>
+                                <div class="votes">5</div>
+                            </div>
+                        </div>
                     </ul>
                 </div>
                 </div>
             </div>
         </div>
     </section>
-
     <div class="popup" id="popup">
         <div class="popup-content">
             <img src="images/tick.png" alt="Tick">
@@ -87,6 +197,9 @@
             <p>Someone has left dog poo near the front gate of Florin park</p>
             <p class="heading">Location:</p>
             <p>Florin park</p>
+            <p class="checkbox">Upvote
+                <input type="checkbox" checked="checked">
+            </p>
             <button type="button" id="closeComplaint">Close</button>
         </div>
     </div>
@@ -105,7 +218,7 @@
         let item = document.getElementById("item");
 
         btn.onclick = function(e) {
-            e.preventDefault();
+            // e.preventDefault();
             modal.style.display = "block";
         }
 
@@ -121,7 +234,8 @@
             location.reload();
         }
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-    
 </body>
 </html>

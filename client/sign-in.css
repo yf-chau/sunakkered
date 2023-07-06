@@ -36,7 +36,7 @@
 }
 
 /* Outer sign in box */
-.form {
+.signin-form {
   background-color: #94B29B;
   margin: 50px auto;
   padding: 30px;
@@ -89,14 +89,14 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-.signupbtn:hover {
+.signinBtn:hover {
   opacity:1;
 }
 
-.signupbtn {
+.signinBtn {
   width: 20%;
-  border-radius: 7px;
-  background-color: #04AA6D;
+  border-radius: 10px;
+  background-color: #94B29B;
   color: #fff;
   padding: 14px 20px;
   margin: 8px 0;
@@ -109,47 +109,113 @@ input[type=text]:focus, input[type=password]:focus {
   text-align: center;
 }
 
-/* Adjust top margin for extra-small screens */
-@media screen and (max-width: 480px) {
-  .top {
-    margin-top: 200px;
+/* Change styles on extra small screens */
+@media screen and (max-width: 300px) {
+  .signupbtn {
+    width: 100%;
   }
-  .form {
-    padding: 100px;
+}
+
+/* Change styles on small screens */
+@media screen and (min-width: 301px) and (max-width: 600px) {
+  .inline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+/* Adjust top margin for extra-small screens */
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  .top {
+    margin-top:  260px;
+    font-size: .35rem;
+    max-width: 350px;
+    max-height: 100px;
+  }
+  .container, .signin-form {
+    max-width: 270px;
+    margin-top: 10px;
+  }
+  .signinBtn {
+    width: 80%;
+  }
+  .logo img {
+    display: none;
   }
 }
 
 /* Adjust top margin for small screens */
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 481px) and (max-width: 830px) {
   .top {
-    margin-top: 200px;
+    margin-top: 300px;
+    font-size: .5rem;
   }
+  .container, .signin-form {
+    max-width: 600px;
+  }
+  .logo img {
+    height: 120px;
+    width: 120px;
+  }
+  
 }
 
 /* Adjust top margin for medium screens */
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 831px) and (max-width: 991px) {
   .top {
     margin-top: 200px;
+    font-size: .5rem;
+  }
+  .container, .signin-form {
+    max-width: 650px;
+  }
+  .logo-img {
+    max-height: 140px;
+    max-width: 140px;
   }
 }
 
 /* Adjust top margin for medium-sized screens */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 992px) and (max-width: 1024px) {
   .top {
-    margin-top: 250px;
+    margin-top: 200px;
+    font-size: .7rem;
+  }
+  .container, .signin-form {
+    max-width: 800px;
+  }
+  logo-img {
+    height: 100px;
+    width: 100px;
   }
 }
 
 /* Adjust top margin for larger screens */
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
   .top {
-    margin-top: 200px;
+    margin-top: 150px;
+    font-size: .7rem;
+  }
+  .container, .signin-form {
+    max-width: 800px;
+  }
+  logo-img {
+    height: 150px;
+    width: 150px;
   }
 }
 
-@media screen and (max-width: 2000px) {
+/* Adjust top margin for extra-large screens */
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
   .top {
-    margin-top: 200px;
+    margin-top: 150px;
   }
 }
-  
+
+@media screen and (min-width: 1401px) and (max-width: 2000px) {
+  .top {
+    margin-top: 150px;
+  }
+}

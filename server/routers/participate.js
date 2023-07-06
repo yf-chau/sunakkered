@@ -1,10 +1,10 @@
 const { Router } = require('express')
 
 const particpateController = require('../controllers/participate.js')
-
+const authenticator = require("../middleware/authenticator");
 const particpateRouter = Router();
 
-particpateRouter.get("/", particpateController.index);
+particpateRouter.get("/",authenticator,  particpateController.index);
 
 particpateRouter.get("/:id", particpateController.show);
 

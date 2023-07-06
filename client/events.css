@@ -6,8 +6,8 @@
     overflow: hidden;
     position: relative;
     height: 200px;
-    width: 65%;
-    margin-top: 40px;
+    width: 95%;
+    margin-top: 20px;
     background-color: #EFEAD8;
     border-radius: 10px;
     margin-left: auto;
@@ -16,9 +16,10 @@
 
 .logo {
     display: inline-block;
+    margin-top: 10px;
 }
 
-.logo img {
+.logo-img {
     height: 200px;
     width: 200px;
 }
@@ -37,31 +38,50 @@
     width: 50px;
 }
 
+
+/* Navbar */
+.nav-link, nav-item {
+    font-family: 'Ysabeau Office', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #6B7E6D;
+    padding: 0;
+    margin: 10px 70px 0 60px;
+  }
+
+  .submit {
+    text-align: center;
+  }
+
+  .inline-p {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 820px;
+    margin-bottom: 0;
+  }
+
 /* Body and background */
 body {
     background-color: #6B7E6D;
     margin:0;
     padding:0;
     font-family: 'Ysabeau Office', sans-serif;
+    padding-bottom: 30px;
 }
 
 /* Welcome statement */
-.welcome {
+#welcome {
     font-family: 'Ysabeau Office', sans-serif;
     background-color: #94B29B;
     padding: 15px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: -5px;
-    width: 94%;
+    margin: 20px 30px 0px 30px;
     border-radius: 10px;
     text-align: center;
     font-size: 1.4rem;
 }
 
+/* Calendar */
 #calendar {
-    max-width: 70%;
     padding: 40px;
     background-color: #94B29B;
     color: #000;
@@ -70,12 +90,11 @@ body {
     border-radius: 10px;
     font-family: 'Ysabeau Office', sans-serif;
     flex: 1;
-    margin-bottom: 30px;
+    margin-bottom: 120px;
 }
 
-  
-
-input[type=date], input[type=time], input[type=text], select[name="borough"] {
+/* Form */
+input[type=date], input[type=time], input[type=text], select[name="borough"], input[type=number] {
     width: 100%;
     padding: 20px;
     margin: 5px 0px 20px 0;
@@ -85,18 +104,43 @@ input[type=date], input[type=time], input[type=text], select[name="borough"] {
     border-radius: 10px;
     color: grey;
     box-sizing: border-box;
-  }
-
-
-  #form {
-    background-color: #94B29B;
-    padding: 20px 60px 30px 30px;
-    border-radius: 10px;
-    margin: 30px 40px auto 20px;
-    max-width: 35%;
     font-family: 'Ysabeau Office', sans-serif;
   }
 
+    input[type=date]:focus,
+    input[type=time]:focus,
+    input[type=text]:focus,
+    input[type=number]:focus,
+    select[name="borough"]:focus {
+    background-color: #ddd;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px -15px;
+    display: inline-block;
+    border: none;
+    background-color: #D0C9C0;
+    border-radius: 10px;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  #input {
+    margin-left: 3px;
+  }
+
+  #form {
+    background-color: #94B29B;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 30px 40px auto 20px;
+    font-family: 'Ysabeau Office', sans-serif;
+  }
+    
   #form h2 {
     margin-top: 0;
   }
@@ -104,7 +148,7 @@ input[type=date], input[type=time], input[type=text], select[name="borough"] {
 #form button {
     width: 40%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #94B29B;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -114,10 +158,97 @@ input[type=date], input[type=time], input[type=text], select[name="borough"] {
     display: flex;
     justify-content: center;
     margin-left: 30%;
+    margin-top: 20px;
   }
+
+#form button:hover {
+background-color: #6B7E6D;}     
+
 
 .container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container2 {
+    max-width: 1000px;
+    padding: 30px;
+    margin: 50px auto;
+    background-color: #EFEAD8;    
+    border-radius: 10px;
   }
+.inner-form {
+    background-color: #EFEAD8;
+    padding: 30px 30px 30px 30px;
+    border-radius: 10px;
+}
 
+/* Responsive design */
+/* Extra small screens */
+@media screen and (max-width: 400px) {
+    #calendar {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    #form {
+        flex: 10% 0 100%;
+        max-width: none;
+      }
+      .welcome {
+        margin-left: 15px;
+        font-size: 1.2rem;
+        margin-bottom: -10px;
+        width: 85%;
+      }
+}
 
+/* Small screens */
+@media screen and (max-width: 800px) {
+    #calendar {
+        margin-right: 25px;
+    }
+    #form {
+        flex: 10% 0 100%;
+        max-width: none;
+      }
+      .welcome {
+        margin: 20px;
+        font-size: 1.2rem;
+        margin-bottom: -10px;
+        width: 85%;
+      }
+}
+
+/* Medium screen */
+@media screen and (max-width: 768px) {
+.container {
+    justify-content: flex-start;
+}
+#calendar {
+    flex: 0 0 70%;
+    margin-bottom: 0;
+}
+#form {
+    flex: 10% 0 70%;
+    max-width: none;
+  }
+} 
+
+/* Large screen */
+@media screen and (max-width: 1000px) {
+    #calendar {
+        margin-right: 50px;
+        margin-bottom: 10px;
+    }
+    #form {
+        flex: 10% 0 100%;
+        max-width: none;
+        flex: 1
+      }
+}
+
+@media screen and (max-width: 992px) {
+    .topBar {
+        height: 400px;
+    }
+}

@@ -12,12 +12,11 @@ CREATE TABLE events (
     category VARCHAR(100),
     organiser_id INT,
     participant_id INT,
-    -- approver_id INT,
-    -- volunteer_id INT,
+    approval BOOLEAN DEFAULT TRUE,
+    needVolunteer BOOLEAN DEFAULT FALSE,
+    volunteer_num INT,
     FOREIGN KEY(organiser_id) REFERENCES users(users_id),
     FOREIGN KEY(participant_id) REFERENCES users(users_id),
-    -- FOREIGN KEY(approver_id) REFERENCES admin(admin_id),
-    -- FOREIGN KEY(volunteer_id) REFERENCES volunteer(volunteer_id),
     PRIMARY KEY (event_id)
 );
 
@@ -32,9 +31,10 @@ INSERT INTO
         location,
         category,
         organiser_id,
-        participant_id
-        -- approver_id,
-        -- volunteer_id,
+        participant_id,
+        approval,
+        needVolunteer,
+        volunteer_num
     )
 VALUES
     (
@@ -47,7 +47,10 @@ VALUES
         'City Park',
         'Community Service',
         NULL,
-        NULL
+        NULL,
+        FALSE,
+        TRUE,
+        10
     ),
     (
         'Summer Concert in the Park',
@@ -59,7 +62,10 @@ VALUES
         'Central Park',
         'Entertainment',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        TRUE,
+        10
     ),
     (
         'Health and Wellness Workshop',
@@ -71,7 +77,10 @@ VALUES
         'Community Center',
         'Education',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        TRUE,
+        10
     ),
     (
         'Family Fun Day',
@@ -83,7 +92,10 @@ VALUES
         'Town Square',
         'Family',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        TRUE,
+        10
     ),
     (
         'Art Exhibition',
@@ -95,7 +107,10 @@ VALUES
         'Art Gallery',
         'Arts & Culture',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        TRUE,
+        10
     ),
     (
         'Outdoor Yoga Session',
@@ -107,7 +122,10 @@ VALUES
         'Botanical Gardens',
         'Health & Wellness',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        TRUE,
+        10
     ),
     (
         'Food Festival',
@@ -119,7 +137,10 @@ VALUES
         'Food Park',
         'Culinary',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        TRUE,
+        10
     ),
     (
         'Sports Tournament',
@@ -131,7 +152,10 @@ VALUES
         'Sports Complex',
         'Sports',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        TRUE,
+        10
     ),
     (
         'Environmental Awareness Talk',
@@ -143,7 +167,10 @@ VALUES
         'Community Center',
         'Education',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        TRUE,
+        10
     ),
     (
         'Fashion Show',
@@ -155,7 +182,10 @@ VALUES
         'Event Hall',
         'Fashion',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        TRUE,
+        10
     ),
     (
         'Technology Expo',
@@ -167,7 +197,10 @@ VALUES
         'Convention Center',
         'Technology',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        FALSE,
+        0
     ),
     (
         'Pets Adoption Day',
@@ -179,7 +212,10 @@ VALUES
         'Animal Shelter',
         'Community Service',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        FALSE,
+        0
     ),
     (
         'Outdoor Film Screening',
@@ -191,7 +227,10 @@ VALUES
         'Park Amphitheater',
         'Entertainment',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        FALSE,
+        0
     ),
     (
         'Art Workshop',
@@ -203,7 +242,10 @@ VALUES
         'Art Studio',
         'Arts & Culture',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        FALSE,
+        0
     ),
     (
         'Fitness Bootcamp',
@@ -215,7 +257,10 @@ VALUES
         'Outdoor Park',
         'Health & Wellness',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        FALSE,
+        0
     ),
     (
         'Local Farmers Market',
@@ -227,7 +272,10 @@ VALUES
         'Town Square',
         'Food & Agriculture',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        FALSE,
+        0
     ),
     (
         'Music Workshop',
@@ -239,7 +287,10 @@ VALUES
         'Music Academy',
         'Arts & Culture',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        FALSE,
+        0
     ),
     (
         'Charity Run',
@@ -251,7 +302,10 @@ VALUES
         'Community Park',
         'Community Service',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        FALSE,
+        0
     ),
     (
         'Science Fair',
@@ -263,7 +317,10 @@ VALUES
         'School Auditorium',
         'Education',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        FALSE,
+        0
     ),
     (
         'Gardening Workshop',
@@ -275,5 +332,8 @@ VALUES
         'Community Garden',
         'Hobbies & Recreation',
         NULL,
-        NULL
+        NULL,
+        TRUE,
+        FALSE,
+        0
     );

@@ -35,7 +35,7 @@ async function login (req, res) {
             const token = await Token.create(user.id);
             res.status(200).json({ authenticated: true, token: token.token });
         }
-        
+
     } catch (err) {
         res.status(403).json({"error": err.message})
     }
@@ -93,7 +93,19 @@ async function destroy (req, res) {
     }
 };
 
+///WIP///
+async function getId(req, res) {
+    try {
+        const token = req.headers.token;
+        const response = await Token.getOneByToken(token)
+        const users_id = response.rows[0].users_id
+        res.status(204).json({ "users_id": users_id });
+    } catch (error) {
+        res.status(404).json({ "error": error.message })
+    }
+}
+///WIP///
 
 module.exports = {
-  index, show, create, update, destroy, register, login
+    index, show, create, update, destroy, register, login, getId
 }

@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300&display=swap');
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    background-color: #6B7E6D;
+    margin:0;
+    padding:0;
+    font-family: 'Ysabeau Office', sans-serif;
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    width: 95%;
+    margin-top: 20px;
+    background-color: #EFEAD8;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.logo-img {
+    height: 200px;
+    width: 200px;
+}
+
+.nav-link, nav-item {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #6B7E6D;
+    padding: 0;
+    margin: 10px 70px 0 60px;
+}
+
+.welcome {
+    background-color: #94B29B;
+    padding: 15px;
+    width: 95%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+    background-color: #94B29B;
+    border-radius: 10px;
+    width: 95%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    padding: 40px;
+}
+
+.events {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.events tr {
+    background-color: #EFEAD8;
+}
+
+.scroll {
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+.events th {
+    border: 1px solid #ddd;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #94B29B;
+    color: white;
+    font-size: 30px;
+}
+
+.events td {
+    border-bottom: 1px solid #ddd;
+    font-size: 22px;
+    padding: 30px 30px;
+}
+
+.signup {
+    color: blue;
+    text-align: center;
+}
+
+.signup img {
+    height: 40px;
+    width: 40px;
+    opacity: 0.2;
+}
+
+.signup img:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.popup-form {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 10px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+}
+
+.popup-content-form {
+    background-color: #EFEAD8;
+    margin: auto;
+    padding: 20px;
+    border-radius: 7px;
+    max-width: 800px;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    width: 80%;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.popup-form h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 20px 0 10px;
+    text-align: center;
+}
+
+.popup-form p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.volunteer-form {
+    padding: 0px 20px 20px 20px;
+}
+
+.volunteer-form label {
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 20px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0px;
+    display: inline-block;
+    border: none;
+    background-color: #D0C9C0;
+    border-radius: 10px;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 18px;
+}
+
+input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.volunteer-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0px;
+    display: inline-block;
+    border: none;
+    background-color: #D0C9C0;
+    border-radius: 10px;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 18px;
+    resize: none;
+    height: 100px;
+}
+
+.volunteer-form textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.btns button {
+    width: 45%;
+    margin: 20px 0px 0px 20px;
+    padding: 10px 0;
+    background: #94B29B;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.btns .cancel-btn {
+    background: #D74C4C;
+}
+
+.popup-confirmation {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+}
+
+.popup-content-confirmation {
+    background-color: #EFEAD8;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    border-radius: 7px;
+    max-width: 500px;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    width: 80%;
+}
+
+.popup-confirmation img {
+    width: 100px;
+    margin-top: -70px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup-confirmation h2 {
+    font-size: 35px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup-confirmation p {
+    font-size: 20px;
+}
+
+.popup-confirmation button {
+    width: 60%;
+    margin-top: 30px;
+    padding: 10px 0;
+    background: #94B29B;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+@media screen and (max-width: 992px) {
+    .topBar {
+        height: 400px;
+    }
+
+    .events th {
+        font-size: 25px;
+    }
+    
+    .events td {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 759px) {
+    .events th {
+        font-size: 22px;
+    }
+    
+    .events td {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .events td, .events th {
+        padding: 10px 0px 10px 10px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 648px) {
+    .btns button {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    popup-form h2 {
+        font-size: 25px;
+    }
+
+    .popup-form p {
+        font-size: 20px;
+    }
+
+    input[type=text], select {
+        font-size: 12px;
+    }
+
+    .volunteer-form label {
+        font-size: 15px;
+    }
+
+    .volunteer-form textarea {
+        font-size: 12px;
+    }
+
+    .btns button {
+        font-size: 15px;
+    }
+
+    
+}

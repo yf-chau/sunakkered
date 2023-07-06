@@ -95,21 +95,16 @@ button:hover {
   opacity:1;
 }
 .signupbtn {
-  width: 20%;
-  border-radius: 7px;
-}
-
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
+    width: 20%;
+    border-radius: 10px;
+    background-color: #94B29B;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+  }
 .submit {
   text-align: center;
 }
@@ -118,12 +113,15 @@ button {
   margin-bottom: 0;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
+/* Change styles on extra small screens */
 @media screen and (max-width: 300px) {
   .signupbtn {
     width: 100%;
   }
-@media screen and (max-width: 600px) {
+}
+
+/* Change styles on small screens */
+@media screen and (min-width: 301px) and (max-width: 600px) {
   .inline-container {
     display: flex;
     flex-direction: column;
@@ -131,53 +129,85 @@ button {
     text-align: left;
   }
 }
-}
 
 /* Adjust top margin for extra-small screens */
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 200px) and (max-width: 480px) {
   .top {
-    margin-top: 3200px;
+    margin-top:  860px;
+    font-size: .35rem;
+    max-width: 350px;
+    max-height: 100px;
+  }
+  .container, .register-form {
+    max-width: 270px;
+    margin-top: 10px;
+  }
+  .logo img {
+    display: none;
+  }
+  .signupbtn {
+    width: 80%;
   }
 }
 
 /* Adjust top margin for small screens */
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 481px) and (max-width: 830px) {
   .top {
-    margin-top: 300px;
+    margin-top: 600px;
+    font-size: .5rem;
   }
+  .container, .register-form {
+    max-width: 600px;
+  }
+  .logo img {
+    height: 120px;
+    width: 120px;
+  }
+  
 }
 
 /* Adjust top margin for medium screens */
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 831px) and (max-width: 991px) {
   .top {
-    margin-top: 500px;
+    margin-top: 600px;
+    font-size: .7rem;
+  }
+  .container, .register-form {
+    max-width: 800px;
   }
 }
 
 /* Adjust top margin for medium-sized screens */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 992px) and (max-width: 1024px) {
   .top {
     margin-top: 600px;
+    font-size: .8rem;
   }
+  .container, .register-form {
+    max-width: 900px;
+  }
+  
 }
 
 /* Adjust top margin for larger screens */
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
   .top {
     margin-top: 600px;
+  }
+  .container, .register-form {
+    max-width: 1000px;
   }
 }
 
 /* Adjust top margin for extra-large screens */
-@media screen and (max-width: 1400px) {
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
   .top {
     margin-top: 600px;
   }
 }
 
-@media screen and (max-width: 2000px) {
+@media screen and (min-width: 1401px) and (max-width: 2000px) {
   .top {
     margin-top: 600px;
   }
 }
-

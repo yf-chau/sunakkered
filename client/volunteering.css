@@ -73,16 +73,17 @@ body {
     width: 100%;
 }
 
-.events td, .events th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
 .events tr {
     background-color: #EFEAD8;
 }
 
+.scroll {
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
 .events th {
+    border: 1px solid #ddd;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
@@ -92,6 +93,7 @@ body {
 }
 
 .events td {
+    border-bottom: 1px solid #ddd;
     font-size: 22px;
     padding: 30px 30px;
 }
@@ -116,7 +118,7 @@ body {
     display: none;
     position: fixed; 
     z-index: 1; 
-    padding-top: 30px;
+    padding-top: 10px;
     left: 0;
     top: 0;
     width: 100%;
@@ -285,4 +287,66 @@ input[type=text]:focus {
     .topBar {
         height: 400px;
     }
+
+    .events th {
+        font-size: 25px;
+    }
+    
+    .events td {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 759px) {
+    .events th {
+        font-size: 22px;
+    }
+    
+    .events td {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .events td, .events th {
+        padding: 10px 0px 10px 10px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 648px) {
+    .btns button {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    popup-form h2 {
+        font-size: 25px;
+    }
+
+    .popup-form p {
+        font-size: 20px;
+    }
+
+    input[type=text], select {
+        font-size: 12px;
+    }
+
+    .volunteer-form label {
+        font-size: 15px;
+    }
+
+    .volunteer-form textarea {
+        font-size: 12px;
+    }
+
+    .btns button {
+        font-size: 15px;
+    }
+
+    
 }

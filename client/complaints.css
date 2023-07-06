@@ -58,18 +58,12 @@ body {
 
 .row {
     margin: 30px 0;
-    padding-bottom: 100px;
-}
-
-.row .columns {
-    margin-bottom: 100px;
 }
 
 .columns {
     display: flex;
     gap: 7em;
     flex-wrap: wrap;
-    height: 600px;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
@@ -362,10 +356,6 @@ input[type=text]:focus {
     .list {
         margin-top: -80px;
     }
-
-    .columns .list {
-        margin-bottom: 200px;
-    }
 }
 
 @media screen and (max-width: 700px) {
@@ -389,7 +379,7 @@ input[type=text]:focus {
         font-size: 15px;
     }
 
-    .submit-btn {
+    .submit-form {
         width: 70%;
         font-size: 20px;
     }
@@ -454,7 +444,7 @@ input[type=text]:focus {
         font-size: 12px;
     }
 
-    .submit-btn {
+    .submit-form {
         width: 70%;
         font-size: 15px;
     }

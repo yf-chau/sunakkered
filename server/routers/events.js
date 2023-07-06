@@ -5,7 +5,7 @@ const authenticator = require("../middleware/authenticator");
 const eventRouter = Router();
 
 //show all events
-eventRouter.get("/", eventController.index);
+eventRouter.get("/", authenticator, eventController.index);
 
 //show all events for fullCalendar plugin
 eventRouter.get("/fullcalendar", eventController.fullcalendar);

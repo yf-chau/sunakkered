@@ -24,7 +24,7 @@ class Complaint {
     }
 
     static async getAllIsFalse() {
-        const response = await db.query("SELECT complaints.*, COUNT(complaint_votes.user_id) AS votes FROM complaints JOIN complaint_votes ON complaints.id = complaint_votes.complaint_id WHERE isfixed = false GROUP BY complaints.id ORDER BY COUNT(complaint_votes.user_id) DESC;");
+        const response = await db.query("SELECT complaints.*, COUNT(complaint_votes.user_id) AS votes FROM complaints JOIN complaint_votes ON complaints.id = complaint_votes.complaint_id WHERE isfixed = false GROUP BY complaints.id ORDER BY COUNT(complaint_votes.users_id) DESC;");
         if (response.rows.length === 0) {
             throw new Error("No unfixed complaint available.")
         }
@@ -32,7 +32,7 @@ class Complaint {
     }
 
     static async getAllIsTrue() {
-        const response = await db.query("SELECT complaints.*, COUNT(complaint_votes.user_id) AS votes FROM complaints JOIN complaint_votes ON complaints.id = complaint_votes.complaint_id WHERE isfixed = true GROUP BY complaints.id ORDER BY COUNT(complaint_votes.user_id) DESC;");
+        const response = await db.query("SELECT complaints.*, COUNT(complaint_votes.user_id) AS votes FROM complaints JOIN complaint_votes ON complaints.id = complaint_votes.complaint_id WHERE isfixed = true GROUP BY complaints.id ORDER BY COUNT(complaint_votes.users_id) DESC;");
         if (response.rows.length === 0) {
             throw new Error("No fixed complaint available.")
         }
@@ -74,7 +74,7 @@ class Complaint {
     }
 
     static async getVotes(id) {
-        const response = await db.query('SELECT COUNT(user_id) AS votes FROM complaint_votes WHERE complaint_id = $1;', [id]);
+        const response = await db.query('SELECT COUNT(users_id) AS votes FROM complaint_votes WHERE complaint_id = $1;', [id]);
         if (response.rows.length != 1) {
             throw new Error("Unable to retrieve votes.")
         }

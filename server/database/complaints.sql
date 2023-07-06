@@ -82,7 +82,7 @@ VALUES
     );
 
 INSERT INTO
-    complaint_votes (complaint_id, user_id)
+    complaint_votes (complaint_id, users_id)
 VALUES
     (1, 1),
     (1, 2),

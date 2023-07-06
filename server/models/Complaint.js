@@ -98,17 +98,17 @@ class Complaint {
     }
 
     static async voteComplaint(users_id, complaint_id) {
-        const response = await db.query('INSERT INTO complaint_votes(complaint_id, user_id) VALUES ($1, $2) RETURNING *;', [users_id, complaint_id]);
+        const response = await db.query('INSERT INTO complaint_votes(user_id, complaint_id) VALUES ($1, $2) RETURNING *;', [users_id, complaint_id]);
 
         return response.rows[0];
     }
 
-    async unvoteComplaint() {
-        const response = await db.query('DELETE FROM complaint_votes WHERE id = $1 RETURNING *;', [this.id]);
-        if (response.rows.length != 1) {
+    static async unvoteComplaint(users_id, complaint_id) {
+        const response = await db.query('DELETE FROM complaint_votes WHERE user_id = $1 AND complaint_id = $2 RETURNING *;', [users_id, complaint_id]);
+        if (response.rows.length == 0) {
             throw new Error("Unable to delete complaint.")
         }
-        return new Complaint(response.rows[0]);
+        return response.rows;
     }
 }
 

@@ -34,4 +34,7 @@ complaintsRouter.get("/showcomplaint/:user_id", complaintsController.showVotedCo
 //Upvote a complaint
 complaintsRouter.post("/votecomplaint/:user_id", complaintsController.voteComplaint)
 
+//Uuvote a complaint
+complaintsRouter.delete("/unvotecomplaint/:user_id", complaintsController.unvoteComplaint)
+
 module.exports = complaintsRouter;

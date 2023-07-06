@@ -101,8 +101,9 @@ async function voteComplaint(req, res) {
 
 async function unvoteComplaint(req, res) {
     try {
+        const user_id = parseInt(req.params.user_id);
         const complaint_id = req.body.complaint_id
-        const response = await Complaint.voteComplaint()
+        const response = await Complaint.unvoteComplaint(user_id, complaint_id)
         res.status(200).json(response)
     } catch (error) {
         res.status(404).json({ "error": error.message })

@@ -10,6 +10,9 @@ eventRouter.get("/", authenticator, eventController.index);
 //show all events for fullCalendar plugin
 eventRouter.get("/fullcalendar", eventController.fullcalendar);
 
+//show all events the needs volunteer
+eventRouter.get("/needsVolunteers", eventController.needsVolunteers);
+
 //show upcoming three events
 eventRouter.get("/upcoming", eventController.upcoming);
 

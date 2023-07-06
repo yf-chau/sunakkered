@@ -13,11 +13,11 @@ eventRouter.get("/fullcalendar", eventController.fullcalendar);
 //show upcoming three events
 eventRouter.get("/upcoming", eventController.upcoming);
 
-//show events by date range
-eventRouter.get("/date", eventController.showByDate);
+// //show events by date range
+// eventRouter.get("/date", eventController.showByDate);
 
-//search for event by keyword
-eventRouter.get("/search", eventController.search);
+// //search for event by keyword
+// eventRouter.get("/search", eventController.search);
 
 //show an event by id
 eventRouter.get("/:id", eventController.show);

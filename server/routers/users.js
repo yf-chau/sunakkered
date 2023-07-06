@@ -9,7 +9,7 @@ userRouter.get("/",  userController.index);
 
 userRouter.get("/:id", userController.show);
 
-userRouter.get("/getid", userController.getId)
+userRouter.get("/getid/:uuid", userController.getId)
 
 userRouter.post("/", userController.create);
 

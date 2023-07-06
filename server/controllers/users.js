@@ -96,10 +96,9 @@ async function destroy (req, res) {
 ///WIP///
 async function getId(req, res) {
     try {
-        const token = req.headers.token;
-        const response = await Token.getOneByToken(token)
-        const users_id = response.rows[0].users_id
-        res.status(204).json({ "users_id": users_id });
+        const uuid = req.params.uuid;
+        const response = await Token.getOneByToken(uuid)
+        res.status(200).json({ "users_id": response.users_id });
     } catch (error) {
         res.status(404).json({ "error": error.message })
     }

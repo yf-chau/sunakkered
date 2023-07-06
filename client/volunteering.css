@@ -15,39 +15,57 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    position: relative;
     height: 200px;
-    width: 100%;
-    margin-top: 40px;
+    width: 95%;
+    margin-top: 20px;
     background-color: #EFEAD8;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo {
-    position: absolute;
+    display: inline-block;
+    margin-top: 10px;
 }
-  
-.logo img {
+
+.logo-img {
     height: 200px;
     width: 200px;
 }
 
+.nav-link, nav-item {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #6B7E6D;
+    font-size: 1.2rem;
+    color: #6B7E6D;
+    padding: 0;
+    margin: 10px 70px 0 60px;
+}
+
+.welcome {
+    background-color: #94B29B;
+    padding: 15px;
+    width: 95%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .box {
     background-color: #94B29B;
-    margin: 50px;
-    padding: 10px 20px 20px 20px;
-}
-
-.box h2 {
-    font-size: 50px;
-    color: white;
-    text-align: center;
-}
-
-.events-list {
-    padding: 30px;
-    background-color: #EFEAD8;  
-    max-height: 500px;
-    overflow: hidden;
-    overflow-y: scroll;
+    border-radius: 10px;
+    width: 95%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
 }
 
 .events {
@@ -62,7 +80,7 @@ body {
 }
 
 .events tr {
-    background-color: #f2f2f2;
+    background-color: #EFEAD8;
 }
 
 .events th {
@@ -76,7 +94,7 @@ body {
 
 .events td {
     font-size: 22px;
-    padding: 50px 30px;
+    padding: 30px 30px;
 }
 
 .signup {
@@ -189,7 +207,7 @@ input[type=text]:focus {
     outline: none;
 }
 
-.btn-group button {
+.btns button {
     width: 45%;
     margin: 20px 0px 0px 20px;
     padding: 10px 0;
@@ -202,7 +220,7 @@ input[type=text]:focus {
     outline: none;
 }
 
-.btn-group .cancel-btn {
+.btns .cancel-btn {
     background: #D74C4C;
 }
 
@@ -263,4 +281,5 @@ input[type=text]:focus {
     cursor: pointer;
     outline: none;
 }
+
   

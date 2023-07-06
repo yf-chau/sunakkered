@@ -48,7 +48,7 @@ class Complaint {
     }
 
     static async create(data) {
-        const { complainant_id = null, title, description = null, location = null, category = null, isFixed = false, image_url = null } = data;
+        const { complainant_id = null, title, description, location, category, isFixed = false, image_url = null } = data;
         const response = await db.query("INSERT INTO complaints (complainant_id, title, description, location, category,isFixed, image_url) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *; ", [complainant_id, title, description, location, category, isFixed, image_url])
         const complaint_id = response.rows[0].id;
         const newComplaint = await Complaint.getOneById(complaint_id)

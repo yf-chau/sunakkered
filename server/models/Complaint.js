@@ -73,12 +73,42 @@ class Complaint {
         return new Complaint(response.rows[0]);
     }
 
+    static async getVoteByVoteId(id) {
+        const response = await db.query('SELECT * FROM complaint_votes WHERE id = $1;', [id]);
+        if (response.rows.length != 1) {
+            throw new Error("Unable to retrieve votes.")
+        }
+        return response.rows[0];
+    }
+
     static async getVotes(id) {
         const response = await db.query('SELECT COUNT(user_id) AS votes FROM complaint_votes WHERE complaint_id = $1;', [id]);
         if (response.rows.length != 1) {
             throw new Error("Unable to retrieve votes.")
         }
         return response.rows[0];
+    }
+
+    static async getUserComplaint(id) {
+        const response = await db.query('SELECT complaint_id FROM complaint_votes WHERE user_id = $1;', [id]);
+        if (response.rows.length ==0) {
+            throw new Error("No user complaint.")
+        }
+        return response.rows;
+    }
+
+    static async voteComplaint(users_id, complaint_id) {
+        const response = await db.query('INSERT INTO complaint_votes(complaint_id, user_id) VALUES ($1, $2) RETURNING *;', [users_id, complaint_id]);
+
+        return response.rows[0];
+    }
+
+    async unvoteComplaint() {
+        const response = await db.query('DELETE FROM complaint_votes WHERE id = $1 RETURNING *;', [this.id]);
+        if (response.rows.length != 1) {
+            throw new Error("Unable to delete complaint.")
+        }
+        return new Complaint(response.rows[0]);
     }
 }
 

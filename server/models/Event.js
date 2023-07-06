@@ -16,10 +16,10 @@ class Event {
         this.location = location
         this.category = category
         this.organiser_id = organiser_id
-        this.approver_id = approver_id
-        this.volunteer_id = volunteer_id
         this.participant_id = participant_id
-        // this.approval = approval
+        this.approval = approval
+        this.needVolunteer = needVolunteer
+        this.volunteer_num = volunteer_num,
     }
 
     static async getAll() {

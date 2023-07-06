@@ -13,6 +13,8 @@ CREATE TABLE events (
     organiser_id INT,
     participant_id INT,
     approval BOOLEAN DEFAULT TRUE,
+    needVolunteer BOOLEAN DEFAULT FALSE,
+    volunteer_num INT,
     -- approver_id INT,
     -- volunteer_id INT,
     FOREIGN KEY(organiser_id) REFERENCES users(users_id),

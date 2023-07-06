@@ -17,7 +17,7 @@ complaintsRouter.get("/istrue", complaintsController.isTrue);
 complaintsRouter.get("/:id", complaintsController.show);
 
 //create a complaint
-complaintsRouter.post("/", complaintsController.create)
+complaintsRouter.post("/create", complaintsController.create)
 
 //update a complaint by id
 complaintsRouter.patch("/:id", complaintsController.update)

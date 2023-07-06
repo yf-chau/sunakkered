@@ -41,7 +41,8 @@
                     <a class="nav-link" href="./voluteering.html">Volunteer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./sign-in.html">Sign-in</a>
+                    <a class="nav-link" id="signin-btn" href="./sign-in.html">Sign-in</a>
+                    <a class="nav-link" id="signout-btn" href="./home.html" style="display: none;">Sign-out</a>
                 </li>
             </ul>
         </div>
@@ -65,13 +66,13 @@
             </div>
             <div class="col-12 col-lg-5 order-lg-2">
                 <div id="form">
-                    <div class="inner-form">
+                    <div class="inner-form"id="inner-form">
                         <h2>Event Form</h2>
                         <form>
                             <label for="eventTitle">Event Title</label>
-                            <input type="text" placeholder="Enter Title" id="eventTitle" name="eventTitle" required>
+                            <input id="input" type="text" placeholder="Enter Title" id="eventTitle" name="eventTitle" required>
                             <label for="eventDesc">Event Description</label>
-                            <input type="text" placeholder="Enter Description" id="eventLocation"
+                            <input id="input"  type="text" placeholder="Enter Description" id="eventLocation"
                                 name="eventLocation" required>
                             <label for="address">Location</label>
                             <select class="text-box" type="select" name="borough" id="borough" required>
@@ -99,7 +100,7 @@
                             <label>
                                 <input class="number" type="number" placeholder="Volunteers required">
                             </label>
-                            <button type="submit">Create Event</button>
+                            <button id = "eventSubmit" type="submit">Create Event</button>
                             <!-- <div class="popup" id="popup">
                               <div class="popup-content">
                                   <img src="images/tick.png" alt="Tick">
@@ -111,6 +112,25 @@
                           </div> -->
                         </form>
                     </div>
+                    <form id ="signInPls" class="Sign In" >
+                    <div class="container2">
+                        
+                        <h1>Sign in</h1>
+                        <br>
+                        <p>Please sign in to create event.</p>
+                        <br>
+                        <label for="email">User Name</label>
+                        <input id="username" class="text-box" type="text" placeholder="Enter Name" name="username" required>
+                        <label for="password">Password</label>
+                        <input id="password"    type="password" placeholder="Enter Password" name="password" required>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                        <div class="submit">
+                            <button type="submit" class="signupbtn">Log in</button>
+                        </div>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>

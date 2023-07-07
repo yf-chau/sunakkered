@@ -141,7 +141,7 @@
       
       <script>
         let modal = document.getElementById("popup");
-        let btn = document.getElementById("submit");
+        let btn = document.getElementById("eventSubmit");
         let closeBtn = document.getElementById("close");
       
         btn.onclick = function() {
@@ -152,6 +152,25 @@
           modal.style.display = "none";
         }
       </script>
+<!-- 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let modal = document.getElementById("popup");
+      let btn = document.getElementById("eventSubmit");
+      let closeBtn = document.getElementById("close");
+  
+      btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        //modal.style.display = "block";
+      });
+  
+      closeBtn.addEventListener('click', function () {
+        modal.style.display = "none";
+      });
+    });
+  </script>
+ -->
+
       
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -166,6 +185,11 @@
         });
       });
   </script>
+
+
+
+
+
 </body>
 
 </html>

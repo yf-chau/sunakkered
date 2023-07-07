@@ -24,7 +24,7 @@ document.getElementById("inner-form").addEventListener("submit", async (e) => {
     const data = await response.json();
 
     if (response.status == 201) {
-        window.location.assign("home.html");
+        location.reload();
     } else {
         alert(data.error);
     }

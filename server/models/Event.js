@@ -79,8 +79,8 @@ class Event {
     }
 
     static async create(data) {
-        const { event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location = null, category = null, organiser_id = null, participant_id = null, approval, needvolunteer, volunteer_num } = data;
-        const response = await db.query("INSERT INTO events (event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location, category, organiser_id, participant_id, approval, needvolunteer, volunteer_num) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *;", [event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location, category, organiser_id, participant_id, approval, needvolunteer, volunteer_num])
+        const { event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location = null, category = null, organiser_id = null, participant_id = null } = data;
+        const response = await db.query("INSERT INTO events (event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location, category, organiser_id, participant_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *;", [event_name, event_start_date, event_start_time, event_end_date, event_end_time, event_description, location, category, organiser_id, participant_id])
         const eventID = response.rows[0].event_id;
         const newEvent = await Event.getOneByEventId(eventID)
         return newEvent;

@@ -1,7 +1,6 @@
 
 window.onload = fetchData;
 async function fetchData() {
-    console.log("bananana")
     try {
       const response = await fetch("https://florincountycouncil.onrender.com/events/needsVolunteers");
       const data = await response.json();

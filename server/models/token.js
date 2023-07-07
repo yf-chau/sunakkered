@@ -29,11 +29,11 @@ class Token {
     }
 
     static async getOneByToken(token) {
-        const response = await db.query("SELECT * FROM token WHERE token = $1", [token]);
+        const response = await db.query("SELECT * FROM token WHERE token LIKE '%'||$1||'%';", [token]);
         if (response.rows.length != 1) {
             throw new Error("Unable to locate token.");
         } else {
-            return new Token(response.rows[0]);
+            return response.rows[0];
         }
     }
 

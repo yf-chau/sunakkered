@@ -107,6 +107,19 @@ tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
 }
 
+td:last-child {
+    opacity: 0.2;
+}
+
+td:last-child {
+    opacity: 0.2;
+}
+
+td:last-child:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
 .scroll {
     max-height: 600px;
     overflow-y: scroll;
@@ -126,6 +139,7 @@ tr:last-child td:last-child {
     border-bottom: 1px solid #ddd;
     font-size: 22px;
     padding: 30px 30px;
+    text-align: center;
 }
 
 .signup {
@@ -133,17 +147,6 @@ tr:last-child td:last-child {
     text-align: center;
 }
 
-.signup img {
-    height: 40px;
-    width: 40px;
-    opacity: 0.2;
-    border-radius: 10px;
-}
-
-.signup img:hover {
-    cursor: pointer;
-    opacity: 1;
-}
 
 .popup-form {
     display: none;

@@ -107,6 +107,7 @@ body {
 
 .newsBoard {
     margin: 50px 10px;
+    padding-bottom: 50px;
 }
 
 .card a {

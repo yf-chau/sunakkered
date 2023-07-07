@@ -16,6 +16,8 @@ document.getElementById("inner-form").addEventListener("submit", async (e) => {
             location: form.get("borough"),
             event_start_date: form.get("eventDate"),
             event_start_time: form.get("eventTime"),
+            needvolunteer: true,
+            volunteer_num: form.get("volunteer-num")
         })
     }
 

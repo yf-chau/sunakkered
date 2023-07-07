@@ -69,8 +69,8 @@ async function fetchData() {
         })
     }
 
-    const response = await fetch("http://localhost:3000/volunteer/create", options);
-    // const response = await fetch("https://florincountycouncil.onrender.com/events/create", options);
+    // const response = await fetch("http://localhost:3000/volunteer/create", options);
+    const response = await fetch("https://florincountycouncil.onrender.com/volunteer/create", options);
     const data = await response.json();
 
     if (response.status == 201) {

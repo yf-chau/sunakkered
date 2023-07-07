@@ -9,7 +9,7 @@ CREATE TABLE complaints (
     description VARCHAR(2000),
     location VARCHAR(100),
     category VARCHAR(100),
-    isfixed Boolean,
+    isfixed Boolean DEFAULT false,
     image_url VARCHAR(200),
     FOREIGN KEY(complainant_id) REFERENCES users(users_id),
     PRIMARY KEY(id)

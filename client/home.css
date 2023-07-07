@@ -18,9 +18,12 @@ body {
     overflow: hidden;
     position: relative;
     height: 200px;
-    width: 100%;
-    margin-top: 40px;
+    width: 95%;
+    margin-top: 20px;
     background-color: #EFEAD8;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo {
@@ -59,12 +62,16 @@ body {
     position: relative;
     top: 0;
     transition: top ease 0.5s;
+    border-radius: 10px;
 }
 
 .row .card img {
     height: 300px;
     width: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
+
 
 .container {
     margin-top: -30px;
@@ -120,17 +127,27 @@ body {
     font-size: 35px;
     color: white;
     text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.outer {
+    background-color: #94B29B;
+    padding-bottom: 40px;
+    margin: 0 40px;
+    border-radius: 0 0 10px 10px;
 }
 
 .news-box {
     background-color: #EFEAD8;
     margin: 0 40px;
     padding: 100px 0px;
-    border: 30px solid #D0C9C0;
+    border-radius: 10px;
     position: relative; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 
     &::before {  
         content: "";
@@ -142,7 +159,7 @@ body {
         bottom: 0px;
         left: 0px;
         opacity: 0.1;
-    }
+}
 }
 
 .lists {
@@ -159,7 +176,7 @@ body {
 .lists ul li {
     font-size: 30px;
     list-style: none;
-    margin-top: 20px ;
+    margin-top: 20px;
 }
 
 .lists .sub-list li {
@@ -167,6 +184,7 @@ body {
     margin: 0px;
     list-style: circle;
 }
+
 
 @media screen and (max-width: 1514px) {
     .card {

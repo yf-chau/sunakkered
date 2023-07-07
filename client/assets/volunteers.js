@@ -80,11 +80,19 @@ async function fetchData() {
         // Show an alert with the error message
         alert(data.error);
       }
+      const closeButton = document.getElementById("cancel");
+
+      closeButton.addEventListener("click", function() {
+      window.close();
+    });
 })
+
+
 
 document.getElementById('close').addEventListener("click", function() {
     window.location.reload();
   });
+
 
 
 async function checkToken() {

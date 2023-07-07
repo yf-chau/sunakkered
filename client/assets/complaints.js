@@ -30,7 +30,7 @@ document.getElementById("complaint-form").addEventListener("submit", async (e) =
 
     // create the complaint
     //const response = await fetch("http://localhost:3000/complaints/create", options);
-    const response = await fetch("https://florincountycouncil.onrender.com/users/register", options);
+    const response = await fetch("https://florincountycouncil.onrender.com/complaints/create", options);
     const data = await response.json();
 
     //When creating the complaint, also vote for the complaint
@@ -70,8 +70,6 @@ async function checkToken() {
         // For example, you can show a sign-in form or redirect the user to a login page
     }
 }
-
-
 
 document.getElementById("signout-btn").addEventListener("click", async (e) => {
     function signOut() {

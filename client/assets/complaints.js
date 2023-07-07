@@ -49,7 +49,8 @@ document.getElementById("complaint-form").addEventListener("submit", async (e) =
 
     if (response.status !== 201) {
         alert(data.error);
-    }
+        
+    } 
 })
 
 
@@ -84,7 +85,7 @@ document.getElementById("signout-btn").addEventListener("click", async (e) => {
         }
     } signOut()
 })
-
+checkToken()
 
 async function loadUserId() {
     const token = localStorage.getItem('token')

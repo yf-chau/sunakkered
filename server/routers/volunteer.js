@@ -8,7 +8,7 @@ volunteerRouter.get("/", volunteerController.index);
 
 volunteerRouter.get("/:id", volunteerController.show);
 
-volunteerRouter.post("/", volunteerController.create);
+volunteerRouter.post("/create", volunteerController.create);
 
 volunteerRouter.patch("/:id", volunteerController.update);
 

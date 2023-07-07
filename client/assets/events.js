@@ -19,7 +19,7 @@ document.getElementById("inner-form").addEventListener("submit", async (e) => {
         })
     }
 
-    //const response = await fetch("http://localhost:3000/events/create", options);
+    // const response = await fetch("http://localhost:3000/events/create", options);
     const response = await fetch("https://florincountycouncil.onrender.com/events/create", options);
     const data = await response.json();
 
@@ -100,3 +100,4 @@ document.getElementById("signout-btn").addEventListener("click", async (e) => {
 
     signOut();
 })
+checkToken()

@@ -31,13 +31,13 @@ class Complaint {
         return response.rows.map(e => new Complaint(e))
     }
 
-    static async getAllIsTrue() {
-        const response = await db.query("SELECT complaints.*, COUNT(complaint_votes.user_id) AS votes FROM complaints JOIN complaint_votes ON complaints.id = complaint_votes.complaint_id WHERE isfixed = true GROUP BY complaints.id ORDER BY COUNT(complaint_votes.users_id) DESC;");
-        if (response.rows.length === 0) {
-            throw new Error("No fixed complaint available.")
-        }
-        return response.rows.map(e => new Complaint(e))
-    }
+    // static async getAllIsTrue() {
+    //     const response = await db.query("SELECT complaints.*, COUNT(complaint_votes.user_id) AS votes FROM complaints JOIN complaint_votes ON complaints.id = complaint_votes.complaint_id WHERE isfixed = true GROUP BY complaints.id ORDER BY COUNT(complaint_votes.users_id) DESC;");
+    //     if (response.rows.length === 0) {
+    //         throw new Error("No fixed complaint available.")
+    //     }
+    //     return response.rows.map(e => new Complaint(e))
+    // }
 
     static async getOneById(id) {
         const response = await db.query("SELECT * FROM complaints WHERE id = $1;", [id]);
@@ -103,13 +103,13 @@ class Complaint {
         return response.rows[0];
     }
 
-    static async unvoteComplaint(users_id, complaint_id) {
-        const response = await db.query('DELETE FROM complaint_votes WHERE user_id = $1 AND complaint_id = $2 RETURNING *;', [users_id, complaint_id]);
-        if (response.rows.length == 0) {
-            throw new Error("Unable to delete complaint.")
-        }
-        return response.rows;
-    }
+    // static async unvoteComplaint(users_id, complaint_id) {
+    //     const response = await db.query('DELETE FROM complaint_votes WHERE user_id = $1 AND complaint_id = $2 RETURNING *;', [users_id, complaint_id]);
+    //     if (response.rows.length == 0) {
+    //         throw new Error("Unable to delete complaint.")
+    //     }
+    //     return response.rows;
+    // }
 }
 
 module.exports = Complaint;

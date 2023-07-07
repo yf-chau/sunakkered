@@ -47,13 +47,13 @@ class Event {
         return new Event(response.rows[0]);
     }
 
-    static async getEventsByKeyword(keyword) {
-        const response = await db.query("SELECT * FROM events WHERE event_name ILIKE $1 OR event_description ILIKE $1;", [`%${keyword}%`]);
-        if (response.rows.length < 1) {
-            throw new Error("No event found.")
-        }
-        return response.rows.map(e => new Event(e))
-    }
+    // static async getEventsByKeyword(keyword) {
+    //     const response = await db.query("SELECT * FROM events WHERE event_name ILIKE $1 OR event_description ILIKE $1;", [`%${keyword}%`]);
+    //     if (response.rows.length < 1) {
+    //         throw new Error("No event found.")
+    //     }
+    //     return response.rows.map(e => new Event(e))
+    // }
 
     static async getEventsByDate(startDate, endDate) {
         const response = await db.query("SELECT * FROM events WHERE event_start_date BETWEEN $1 AND $2", [startDate, endDate]);
@@ -92,13 +92,13 @@ class Event {
         return newEvent;
     }
 
-    async destroy() {
-        const response = await db.query('DELETE FROM events WHERE event_id = $1 RETURNING *;', [this.event_id]);
-        if (response.rows.length != 1) {
-            throw new Error("Unable to delete event.")
-        }
-        return new Event(response.rows[0]);
-    }
+    // async destroy() {
+    //     const response = await db.query('DELETE FROM events WHERE event_id = $1 RETURNING *;', [this.event_id]);
+    //     if (response.rows.length != 1) {
+    //         throw new Error("Unable to delete event.")
+    //     }
+    //     return new Event(response.rows[0]);
+    // }
 
 }
 

@@ -9,14 +9,14 @@ async function isFalse(req, res) {
     }
 }
 
-async function isTrue(req, res) {
-    try {
-        const complaints = await Complaint.getAllIsTrue();
-        res.status(200).json(complaints)
-    } catch (error) {
-        res.status(500).json({ "error": error.message })
-    }
-}
+// async function isTrue(req, res) {
+//     try {
+//         const complaints = await Complaint.getAllIsTrue();
+//         res.status(200).json(complaints)
+//     } catch (error) {
+//         res.status(500).json({ "error": error.message })
+//     }
+// }
 
 async function index(req, res) {
     try {
@@ -66,7 +66,7 @@ async function destroy(req, res) {
     } catch (error) {
         res.status(404).json({ "error": error.message })
     }
-}
+} check
 
 async function showVotes(req, res) {
     try {
@@ -99,16 +99,19 @@ async function voteComplaint(req, res) {
     }
 }
 
-async function unvoteComplaint(req, res) {
-    try {
-        const user_id = parseInt(req.params.user_id);
-        const complaint_id = req.body.complaint_id
-        const response = await Complaint.unvoteComplaint(user_id, complaint_id)
-        res.status(200).json(response)
-    } catch (error) {
-        res.status(404).json({ "error": error.message })
-    }
-}
+// async function unvoteComplaint(req, res) {
+//     try {
+//         const user_id = parseInt(req.params.user_id);
+//         const complaint_id = req.body.complaint_id
+//         const response = await Complaint.unvoteComplaint(user_id, complaint_id)
+//         res.status(200).json(response)
+//     } catch (error) {
+//         res.status(404).json({ "error": error.message })
+//     }
+// }
 
 
-module.exports = { index, show, create, update, destroy, isFalse, isTrue, showVotes, showVotedComplaints, voteComplaint, unvoteComplaint }
+module.exports = { index, show, create, update, destroy, isFalse, showVotes, showVotedComplaints, voteComplaint, }
+
+// isTrue
+//unvoteComplaint

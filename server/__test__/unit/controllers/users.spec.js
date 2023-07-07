@@ -28,7 +28,7 @@ describe('user controller', () => {
         jest.spyOn(User, 'getAll').mockResolvedValue(users);
         await userController.index(null, mockRes);
         expect(mockStatus).toHaveBeenCalledWith(200);
-        // expect(mockJson).toHaveBeenCalledWith(users);
+        expect(mockJson).toHaveBeenCalledWith(users);
     });
       
     
@@ -79,9 +79,11 @@ describe('user controller', () => {
       const mockReq = { body: testUser }
       await userController.create(mockReq, mockRes);
       expect(mockStatus).toHaveBeenCalledWith(201);
-    //   expect(mockJson).toHaveBeenCalledWith(new User(testUser));
+      expect(mockJson).toHaveBeenCalledWith(new User(testUser));
     })
   });
+
+  
 
   describe('destroy', () => {
     test('it returns a 204 status code on successful deletion', async () => {

@@ -30,9 +30,9 @@
       "/node_modules/"
     ],
     "testPathIgnorePatterns": [
-      "node_modules"
+      "/__tests__/integration/config.js"
     ]
-  },
+ },
   "devDependencies": {
     "jest": "^29.6.0",
     "nodemon": "^2.0.22",

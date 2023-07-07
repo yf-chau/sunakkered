@@ -1,6 +1,6 @@
 const { setupTables, destroyDbEnv } = require('../../database/setup-test-db')
 
-describe('users endpoints', () => {
+describe('complaints endpoints', () => {
   let api;
 
   beforeEach(async () => {
@@ -22,16 +22,11 @@ describe('users endpoints', () => {
     await api.close()
   })
 
-  it('should retrieve a users based on id', async () => {
-    const res = await request(app).get('/users/1')
+  it('should retrieve a complaint based on id', async () => {
+    const res = await request(app).get('/complaints/1')
     expect(res.statusCode).toEqual(200)
-    expect(res.body.name).toEqual('john_doe')
+    expect(res.body.title).toEqual('Broken Streetlight')
   });
 
-  // it('should retrieve all the users', async () => {
-  //   const res = await request(app).get('/users')
-  //   expect(res.statusCode).toEqual(200)
-  //   expect.(req.body).toEqual(body)
-  // })
-
 })
+
